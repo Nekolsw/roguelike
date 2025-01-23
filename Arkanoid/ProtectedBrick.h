@@ -1,7 +1,7 @@
 #pragma once
 #include "BaseBrick.h"
 #include "Constants.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	class ProtectedBrick : public BaseBrick
 	{

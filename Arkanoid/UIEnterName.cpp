@@ -1,6 +1,6 @@
 #include "UIEnterName.h"
 #include "UIManager.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	void UIEnterName::EnterPlayerName(sf::Event& event, GameResources& resources)
 	{

@@ -1,5 +1,5 @@
 #pragma once
-namespace Arkanoid 
+namespace Roguelike 
 {
 	class VectorMain
 	{

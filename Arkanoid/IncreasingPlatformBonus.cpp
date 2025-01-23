@@ -1,6 +1,6 @@
 #include "IncreasingPlatformBonus.h"
 #include "Constants.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	void IncreasingPlatformBonus::Initialization(GameResources& resources)
 	{

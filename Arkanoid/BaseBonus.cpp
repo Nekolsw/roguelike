@@ -1,6 +1,6 @@
 #include "BaseBonus.h"
 
-namespace Arkanoid {
+namespace Roguelike {
 
 	void BaseBonus::Update(float& deltaTime)
 	{

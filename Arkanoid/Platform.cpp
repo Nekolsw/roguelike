@@ -1,7 +1,7 @@
 #include "Platform.h"
 #include "GameMath.h"
 #include "KeyBindings.h"
-void Arkanoid::Platform::Initialization(sf::Vector2f newPosition, GameResources& resources, sf::Color color)
+void Roguelike::Platform::Initialization(sf::Vector2f newPosition, GameResources& resources, sf::Color color)
 {
 	positionPlaform = newPosition;
 	SpriteObject::Initialization(newPosition, PLATFORM_STANDART_SIZE, resources.platformTexture, color);
@@ -9,7 +9,7 @@ void Arkanoid::Platform::Initialization(sf::Vector2f newPosition, GameResources&
 	directionSpeed = PLATFORM_SPEED;
 }
 
-void Arkanoid::Platform::Update(float& deltaTime)
+void Roguelike::Platform::Update(float& deltaTime)
 {
 		if (KeyBindings::Instance().GetKeyHolding() == KeyBindings::Instance().GetKey().keyRight && objectSprite.getPosition().x <= (WINDOW_SIZE.x - objectSprite.getOrigin().x - 30.f))
 		{
@@ -41,12 +41,12 @@ void Arkanoid::Platform::Update(float& deltaTime)
 		}
 }
 
-void Arkanoid::Platform::TookSizeIncreaseBonus()
+void Roguelike::Platform::TookSizeIncreaseBonus()
 {
 	durationInIncreasedSize = DURATION_BONUSES;
 }
 
-bool Arkanoid::Platform::Collision(BaseBonus& bonus, SpriteObject& platform)
+bool Roguelike::Platform::Collision(BaseBonus& bonus, SpriteObject& platform)
 {
 	float dx = (float)fabs(bonus.GetPosition().x - objectSprite.getPosition().x);
 	float dy = (float)fabs(bonus.GetPosition().y - objectSprite.getPosition().y);
@@ -62,7 +62,7 @@ bool Arkanoid::Platform::Collision(BaseBonus& bonus, SpriteObject& platform)
 	return false;
 }
 
-float Arkanoid::Platform::GetDirectionSpeed()
+float Roguelike::Platform::GetDirectionSpeed()
 {
 	return directionSpeed;
 }

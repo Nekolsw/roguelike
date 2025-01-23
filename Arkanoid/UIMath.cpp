@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "UIMath.h"
 
-namespace Arkanoid
+namespace Roguelike
 {
 
 	void SetTextRelativeOrigin(sf::Text& text, const UIPosition2D& relativePosition)

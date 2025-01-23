@@ -1,5 +1,5 @@
 #include "Application.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	Application::Application()
 	{
@@ -17,7 +17,7 @@ namespace Arkanoid
 	}
 	void Application::StartGame()
 	{
-		sf::RenderWindow window(sf::VideoMode(WINDOW_SIZE.x, WINDOW_SIZE.y), "Arkanoid");
+		sf::RenderWindow window(sf::VideoMode(WINDOW_SIZE.x, WINDOW_SIZE.y), "Roguelike");
 		srand(seed);
 		game.RunApplication(game.mainGameStruct);
 		float lastTime = gameClock.getElapsedTime().asSeconds();

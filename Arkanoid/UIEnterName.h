@@ -1,7 +1,7 @@
 #pragma once
 #include "UIConstructor.h"
 #include "Resources.h"
-namespace Arkanoid 
+namespace Roguelike 
 {
 	class UIEnterName
 	{

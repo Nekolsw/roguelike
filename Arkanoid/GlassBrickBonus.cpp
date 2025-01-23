@@ -1,6 +1,6 @@
 #include "GlassBrickBonus.h"
 #include "GameMath.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	void GlassBrickBonus::Initialization(GameResources& resources)
 	{

@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "GameSettings.h"
 #include "BaseBonus.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	void Game::RunApplication(GameStruct& gameStruct)
 	{

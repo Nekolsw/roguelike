@@ -4,7 +4,7 @@
 #include <SFML/Audio.hpp>
 #include "Constants.h"
 
-namespace Arkanoid
+namespace Roguelike
 {
 	struct GameResources {
 		sf::Texture ballTexture, ballTextureDamage_1, ballTextureDamage_2, ballTextureDamage_3, ballTextureDestroy, wallTexture, platformTexture, brickClassicTexture, brickProtectedTexture, 

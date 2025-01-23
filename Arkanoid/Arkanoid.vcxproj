@@ -24,7 +24,7 @@
     <ProjectGuid>{ABE4C3F2-014A-408A-A7C3-99ECEFA0AFA7}</ProjectGuid>
     <RootNamespace>Arkanoid</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Arkanoid</ProjectName>
+    <ProjectName>Roguelike</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

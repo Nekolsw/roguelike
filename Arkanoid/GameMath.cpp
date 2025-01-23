@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "GameMath.h"
 
-namespace Arkanoid
+namespace Roguelike
 {
 	void SetSpriteSize(sf::Sprite& sprite, sf::Vector2f size)
 	{

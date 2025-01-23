@@ -2,7 +2,7 @@
 #include "GameSettings.h"
 #include "GameMath.h"
 
-namespace Arkanoid
+namespace Roguelike
 {
 	void ProtectedBrick::Initialization(sf::Vector2f newPosition, sf::Vector2f sizeBrick, GameResources& resources, sf::Color color)
 	{

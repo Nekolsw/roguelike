@@ -1,6 +1,6 @@
 #include "FireBallBonus.h"
 #include "GameMath.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	void FireBallBonus::Initialization(GameResources& resources)
 	{

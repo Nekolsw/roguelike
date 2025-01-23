@@ -10,7 +10,7 @@
 #include "Resources.h"
 #include "UIManager.h"
 
-namespace Arkanoid
+namespace Roguelike
 {
 	class Game
 	{

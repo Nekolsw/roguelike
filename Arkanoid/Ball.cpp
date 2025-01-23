@@ -3,7 +3,7 @@
 #include "SpriteObject.h"
 #include "Ball.h"
 
-namespace Arkanoid
+namespace Roguelike
 {
 	void Ball::Initialization(sf::Vector2f newPosition, GameResources& resources, sf::Color color)
 	{

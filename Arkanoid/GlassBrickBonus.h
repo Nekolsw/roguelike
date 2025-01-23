@@ -1,6 +1,6 @@
 #pragma once
 #include "BaseBonus.h"
-namespace Arkanoid 
+namespace Roguelike 
 {
 	class GlassBrickBonus : public BaseBonus
 	{

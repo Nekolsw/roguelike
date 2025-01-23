@@ -4,7 +4,7 @@
 #include "Constants.h"
 #include "BaseBonus.h"
 #include "Resources.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	class Platform : public SpriteObject
 	{
