@@ -6,7 +6,6 @@ namespace Roguelike
 	{
 		InitializingResources(resources);
 		interfaces.uiScore.InitializingScore(resources.fontText);
-		interfaces.uiTableRecord.InitializedTable(resources.fontText);
 		interfaces.uiMainMenu.InitializedMainMenu(resources.fontText);
 		interfaces.uiEnterName.InitializedMainMenu(resources.fontText);
 		interfaces.uiPopUpEnterName.InitializedMainMenu(resources.fontText);
@@ -20,26 +19,10 @@ namespace Roguelike
 		interfaces.uiScore.UpdateScore(numberScore);
 	}
 
-	void UIManager::AddScore(GameSettings::TypeBrick typeBrick)
+	void UIManager::AddScore()
 	{
-		int addNumberScore = 0;
 
-		switch (typeBrick)
-		{
-		case GameSettings::TypeBrick::Standart:
-			addNumberScore = 2;
-			break;
-		case GameSettings::TypeBrick::Glass:
-			addNumberScore = 1;
-			break;
-		case GameSettings::TypeBrick::Protected:
-			addNumberScore = 3;
-			break;
-		default:
-			break;
-		}
-
-		numberScore += addNumberScore;
+		numberScore++;
 		UpdateScore();
 	}
 	int UIManager::GetScore()
@@ -60,15 +43,10 @@ namespace Roguelike
 		}
 		else 
 		{
-			interfaceState = UIManager::InterfaceState::PopUpTableRecord;
 			gameState = UIManager::GameState::Pause;
 		}
 	}
 
-	void UIManager::AddPlayerInTable(std::string namePlayerTable, int numberScore)
-	{
-		interfaces.uiTableRecord.UpdateNumberScorePlayer(namePlayerTable, numberScore);
-	}
 
 	void UIManager::ManagementMainMenu(sf::Window& window)
 	{
@@ -103,25 +81,6 @@ namespace Roguelike
 		}
 	}
 
-	void UIManager::PopUpTableRecord(sf::Event& event)
-	{
-		bool isSelectedMainMenu = interfaces.uiTableRecord.SelectedEventButton(event);
-
-		if (interfaceState == InterfaceState::PopUpTableRecord)
-		{
-
-			if (interfaces.uiTableRecord.isSelected && isSelectedMainMenu)
-			{
-				interfaceState = InterfaceState::MainMenu;
-			}
-			else if (interfaces.uiTableRecord.isSelected && !isSelectedMainMenu) 
-			{
-				interfaceState = InterfaceState::Game;
-				gameState = GameState::Restart;
-			}
-		}
-	}
-
 	void UIManager::EnterNamePlayer(sf::Event& event) 
 	{
 		if (interfaceState == InterfaceState::EnterName)
@@ -130,8 +89,6 @@ namespace Roguelike
 
 			if (interfaces.uiEnterName.isPlayerNameEnter)
 			{
-				interfaceState = InterfaceState::PopUpTableRecord;
-				AddPlayerInTable(interfaces.uiEnterName.playerName, numberScore);
 				ResetScore();
 				UpdateScore();
 			}
@@ -143,7 +100,7 @@ namespace Roguelike
 		switch (interfaceState)
 		{
 		case Roguelike::UIManager::InterfaceState::MainMenu:
-			interfaces.uiMainMenu.DrawMainMenu(window, resources.fontText, interfaces.uiTableRecord);
+			interfaces.uiMainMenu.DrawMainMenu(window, resources.fontText);
 			break;
 		case Roguelike::UIManager::InterfaceState::Game:
 			interfaces.uiScore.DrawScore(window);
@@ -153,9 +110,6 @@ namespace Roguelike
 			break;
 		case Roguelike::UIManager::InterfaceState::EnterName:
 			interfaces.uiEnterName.DrawEnterText(window);
-			break;
-		case Roguelike::UIManager::InterfaceState::PopUpTableRecord:
-			interfaces.uiTableRecord.DrawTableGameOver(window, resources, numberPlayerNameGameOverTable);
 			break;
 
 		default:
@@ -170,10 +124,7 @@ namespace Roguelike
 		case UIManager::InterfaceState::EnterName:
 			EnterNamePlayer(event);
 			break;
-		case UIManager::InterfaceState::Game:
-			break;
-		case UIManager::InterfaceState::PopUpTableRecord:
-			PopUpTableRecord(event);
+		case Roguelike::UIManager::InterfaceState::Game:
 			break;
 		case UIManager::InterfaceState::IsEnterName:
 			PopUpEnteredName(event);

@@ -5,11 +5,11 @@ namespace Roguelike
 	void UIScore::InitializingScore(sf::Font& font)
 	{
 
-		SetTextScreen(scoreUI, "Score: 0", TEXT_SCORE_SIZE, sf::Color::Cyan, font, { 1000.f, 10.f }, { 0, 0 });
+		SetTextScreen(scoreUI, "TO BE DONE... Press Esc to exit to menu", TEXT_SCORE_SIZE, sf::Color::Cyan, font, { 500.f, 500.f }, { 0, 0 });
 	}
 	void UIScore::UpdateScore(int& numberScore)
 	{
-		UpdateTextScreen(scoreUI, "Score: " + std::to_string(numberScore));
+		UpdateTextScreen(scoreUI, "Score: "  + std::to_string(numberScore));
 	}
 	void UIScore::DrawScore(sf::RenderWindow& window)
 	{

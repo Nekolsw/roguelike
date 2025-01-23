@@ -1,0 +1,30 @@
+[33mcommit eddeb5543ae51b189a01c2bcc3ed32f41fb7dd86[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeatures/issue-2[m[33m)[m
+Merge: 68f3209 8010273
+Author: Maxim <fasilev.maks@gmail.com>
+Date:   Thu Jan 23 11:41:21 2025 +0300
+
+    Merge branch 'main' into features/issue-2
+
+[33mcommit 80102734e9881762ff185ab8d1de270fb30b4c03[m[33m ([m[1;32mmain[m[33m)[m
+Author: Maxim <fasilev.maks@gmail.com>
+Date:   Thu Jan 23 11:39:29 2025 +0300
+
+    Fixed warning
+
+[33mcommit 68f3209e0171f4826468f0a767c113cb264b68ff[m
+Author: Maxim <fasilev.maks@gmail.com>
+Date:   Thu Jan 23 11:01:26 2025 +0300
+
+    [#2] Renamed arcanoid in code to raguelike
+
+[33mcommit 7c3558c06c042de8a6ca44b9548e5cfcc83386d2[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Maxim <fasilev.maks@gmail.com>
+Date:   Thu Jan 23 10:29:51 2025 +0300
+
+    [#2] Added arcanoid to repo.
+
+[33mcommit 7bc9a8671e13349f00745974e37dd7fa06f14b47[m
+Author: Maxim <fasilev.maks@gmail.com>
+Date:   Wed Jan 22 13:31:03 2025 +0300
+
+    Initialized repo

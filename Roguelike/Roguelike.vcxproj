@@ -159,65 +159,40 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="BaseBonus.cpp" />
-    <ClCompile Include="Brick.cpp" />
-    <ClCompile Include="ConstructionBonus.cpp" />
-    <ClCompile Include="ConstructionBricks.cpp" />
-    <ClCompile Include="FireBallBonus.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="GameMath.cpp" />
-    <ClCompile Include="GlassBrickBonus.cpp" />
-    <ClCompile Include="IncreasingPlatformBonus.cpp" />
     <ClCompile Include="KeyBindings.cpp" />
-    <ClCompile Include="Platform.cpp" />
-    <ClCompile Include="ProtectedBrick.cpp" />
     <ClCompile Include="SpriteObject.cpp" />
     <ClCompile Include="Resources.cpp" />
     <ClCompile Include="UIConstructor.cpp" />
     <ClCompile Include="UIEnterName.cpp" />
-    <ClCompile Include="UIGameModes.cpp" />
     <ClCompile Include="UIMainMenu.cpp" />
     <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="UIMath.cpp" />
     <ClCompile Include="UIPopUpEnterName.cpp" />
     <ClCompile Include="UIScore.cpp" />
     <ClCompile Include="UISettings.cpp" />
-    <ClCompile Include="UITableRecord.cpp" />
     <ClCompile Include="VectorMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="Ball.h" />
-    <ClInclude Include="BaseBonus.h" />
-    <ClInclude Include="BaseBrick.h" />
-    <ClInclude Include="Brick.h" />
     <ClInclude Include="Constants.h" />
-    <ClInclude Include="ConstructionBonus.h" />
-    <ClInclude Include="ConstructionBricks.h" />
-    <ClInclude Include="FireBallBonus.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameMath.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameSettings.h" />
-    <ClInclude Include="GlassBrickBonus.h" />
-    <ClInclude Include="IncreasingPlatformBonus.h" />
     <ClInclude Include="KeyBindings.h" />
-    <ClInclude Include="Platform.h" />
-    <ClInclude Include="ProtectedBrick.h" />
     <ClInclude Include="SpriteObject.h" />
     <ClInclude Include="Resources.h" />
     <ClInclude Include="UIConstructor.h" />
     <ClInclude Include="UIEnterName.h" />
-    <ClInclude Include="UIGameModes.h" />
     <ClInclude Include="UIMainMenu.h" />
     <ClInclude Include="UIManager.h" />
     <ClInclude Include="UIMath.h" />
     <ClInclude Include="UIPopUpEnterName.h" />
     <ClInclude Include="UIScore.h" />
     <ClInclude Include="UISettings.h" />
-    <ClInclude Include="UITableRecord.h" />
     <ClInclude Include="VectorMain.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
