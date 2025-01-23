@@ -3,8 +3,6 @@
 #include <iterator>
 #include "UIConstructor.h"
 #include "UISettings.h"
-#include "UITableRecord.h"
-#include "UIGameModes.h"
 #include "Resources.h"
 namespace Roguelike
 {
@@ -13,7 +11,6 @@ namespace Roguelike
 		struct UIMenuItem 
 		{
 			UISettings uiSettings;
-			UIGameModes uiGameModes;
 		};
 		UIMenuItem uiMenuItem; 
 		sf::Sound soundGame;
@@ -24,16 +21,14 @@ namespace Roguelike
 		bool isMenuItemSelected = false;
 		enum MenuItems 
 		{
-			StartPLaying = 0,
-			TableScore, 
-			GameModes,
+			StartPLaying = 0, 
 			Settings,
 			Exit,
 		};
 		void InitializedMainMenu(sf::Font& font);
 		void Playback(sf::SoundBuffer& buffer, GameSettings& gameSettings);
 		bool ChoiceItemMenu(sf::Window& window, GameSettings& gameSettings, GameResources& gameResources);
-		void DrawMainMenu(sf::RenderWindow& window, sf::Font& font, UITableRecord& uiTableRecord);
+		void DrawMainMenu(sf::RenderWindow& window, sf::Font& font);
 	private:
 		MenuItems beginMenuItem;
 		std::list <sf::Text> listTextMenuItems;

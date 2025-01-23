@@ -9,19 +9,14 @@ namespace Roguelike
 		SetTextScreen(textHeader, "Menu", 48, sf::Color::Cyan, font, { 650.f, 190.f }, { 0.5f, 0.5f });
 		SetTextScreen(text, "Start", 36, sf::Color::Green, font, { 650.f, 280.f }, { 0.5f, 0.5f });
 		listTextMenuItems.push_back(text);
-		SetTextScreen(text, "Table record", 36, sf::Color::Cyan, font, { 650.f, 330.f }, { 0.5f, 0.5f });
+		SetTextScreen(text, "Settings", 36, sf::Color::Cyan, font, { 650.f, 330.f }, { 0.5f, 0.5f });
 		listTextMenuItems.push_back(text);
-		SetTextScreen(text, "Game modes", 36, sf::Color::Cyan, font, { 650.f, 380.f }, { 0.5f, 0.5f });
-		listTextMenuItems.push_back(text);
-		SetTextScreen(text, "Settings", 36, sf::Color::Cyan, font, { 650.f, 430.f }, { 0.5f, 0.5f });
-		listTextMenuItems.push_back(text);
-		SetTextScreen(text, "Exit", 36, sf::Color::Cyan, font, { 650.f, 480.f }, { 0.5f, 0.5f });
+		SetTextScreen(text, "Exit", 36, sf::Color::Cyan, font, { 650.f, 380.f }, { 0.5f, 0.5f });
 		listTextMenuItems.push_back(text);
 		beginMenuItem = MenuItems::StartPLaying;
 		textMenuIter = listTextMenuItems.begin();
 		SetRectangleShape(menuBackground, { 400.f, 500.f }, sf::Color(25, 25, 25, 235), { 0.5f, 0.5f }, { 443.f, 160.f }, sf::Color::Cyan, 1.f);
 		uiMenuItem.uiSettings.InitializedSettings(font);
-		uiMenuItem.uiGameModes.InitializedMainMenu(font);
 	}
 	void UIMainMenu::Playback(sf::SoundBuffer& buffer, GameSettings& gameSettings)
 	{
@@ -75,12 +70,6 @@ namespace Roguelike
 				isMenuItemSelected = false;
 				return true;
 				break;
-			case Roguelike::UIMainMenu::TableScore:
-
-				break;
-			case Roguelike::UIMainMenu::GameModes:
-				uiMenuItem.uiGameModes.ChoiceMenu(gameSettings, gameResources);
-				break;
 			case Roguelike::UIMainMenu::Settings:
 				uiMenuItem.uiSettings.ChoiceSettings(gameSettings, gameResources);
 				break;
@@ -100,7 +89,7 @@ namespace Roguelike
 		return false;
 	}
 
-	void UIMainMenu::DrawMainMenu(sf::RenderWindow& window, sf::Font& font, UITableRecord& uiTableRecord)
+	void UIMainMenu::DrawMainMenu(sf::RenderWindow& window, sf::Font& font)
 	{
 		if (!isMenuItemSelected)
 		{
@@ -115,12 +104,6 @@ namespace Roguelike
 		{
 			switch (beginMenuItem)
 			{
-			case Roguelike::UIMainMenu::TableScore:
-				uiTableRecord.DrawTableRecord(window, font, 5);
-				break;
-			case Roguelike::UIMainMenu::GameModes:
-				uiMenuItem.uiGameModes.Draw(window);
-				break;
 			case Roguelike::UIMainMenu::Settings:
 				uiMenuItem.uiSettings.DrawSettings(window);
 				break;

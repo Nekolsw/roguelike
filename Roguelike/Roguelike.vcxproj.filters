@@ -11,12 +11,6 @@
     <Filter Include="Sources\GameObjects">
       <UniqueIdentifier>{9f74a293-87dd-44c9-8b7a-e219a367bc85}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\GameObjects\BonusFactory">
-      <UniqueIdentifier>{472fa503-4842-45f9-bae2-75591159b740}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\GameObjects\BrickFactory">
-      <UniqueIdentifier>{23bfd92b-aafb-4998-93e3-608df8f4dae6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Sources\GameMath">
       <UniqueIdentifier>{3b3402e7-aeaa-40cd-8751-d8d5f3cd1182}</UniqueIdentifier>
     </Filter>
@@ -43,9 +37,6 @@
     <ClCompile Include="UIEnterName.cpp">
       <Filter>Sources\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="UIGameModes.cpp">
-      <Filter>Sources\Interface</Filter>
-    </ClCompile>
     <ClCompile Include="UIMainMenu.cpp">
       <Filter>Sources\Interface</Filter>
     </ClCompile>
@@ -64,33 +55,6 @@
     <ClCompile Include="UISettings.cpp">
       <Filter>Sources\Interface</Filter>
     </ClCompile>
-    <ClCompile Include="UITableRecord.cpp">
-      <Filter>Sources\Interface</Filter>
-    </ClCompile>
-    <ClCompile Include="Brick.cpp">
-      <Filter>Sources\GameObjects\BrickFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="ProtectedBrick.cpp">
-      <Filter>Sources\GameObjects\BrickFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="ConstructionBricks.cpp">
-      <Filter>Sources\GameObjects\BrickFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="FireBallBonus.cpp">
-      <Filter>Sources\GameObjects\BonusFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="GlassBrickBonus.cpp">
-      <Filter>Sources\GameObjects\BonusFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="IncreasingPlatformBonus.cpp">
-      <Filter>Sources\GameObjects\BonusFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="Ball.cpp">
-      <Filter>Sources\GameObjects</Filter>
-    </ClCompile>
-    <ClCompile Include="Platform.cpp">
-      <Filter>Sources\GameObjects</Filter>
-    </ClCompile>
     <ClCompile Include="SpriteObject.cpp">
       <Filter>Sources\GameObjects</Filter>
     </ClCompile>
@@ -102,12 +66,6 @@
     </ClCompile>
     <ClCompile Include="Resources.cpp">
       <Filter>Sources\GameResouces</Filter>
-    </ClCompile>
-    <ClCompile Include="ConstructionBonus.cpp">
-      <Filter>Sources\GameObjects\BonusFactory</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseBonus.cpp">
-      <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -124,9 +82,6 @@
       <Filter>Sources\Interface</Filter>
     </ClInclude>
     <ClInclude Include="UIEnterName.h">
-      <Filter>Sources\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="UIGameModes.h">
       <Filter>Sources\Interface</Filter>
     </ClInclude>
     <ClInclude Include="UIMainMenu.h">
@@ -147,40 +102,7 @@
     <ClInclude Include="UISettings.h">
       <Filter>Sources\Interface</Filter>
     </ClInclude>
-    <ClInclude Include="UITableRecord.h">
-      <Filter>Sources\Interface</Filter>
-    </ClInclude>
-    <ClInclude Include="Brick.h">
-      <Filter>Sources\GameObjects\BrickFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseBrick.h">
-      <Filter>Sources\GameObjects\BrickFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="ProtectedBrick.h">
-      <Filter>Sources\GameObjects\BrickFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="ConstructionBricks.h">
-      <Filter>Sources\GameObjects\BrickFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseBonus.h">
-      <Filter>Sources\GameObjects\BonusFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="FireBallBonus.h">
-      <Filter>Sources\GameObjects\BonusFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="GlassBrickBonus.h">
-      <Filter>Sources\GameObjects\BonusFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="IncreasingPlatformBonus.h">
-      <Filter>Sources\GameObjects\BonusFactory</Filter>
-    </ClInclude>
-    <ClInclude Include="Ball.h">
-      <Filter>Sources\GameObjects</Filter>
-    </ClInclude>
     <ClInclude Include="GameObject.h">
-      <Filter>Sources\GameObjects</Filter>
-    </ClInclude>
-    <ClInclude Include="Platform.h">
       <Filter>Sources\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="SpriteObject.h">
@@ -197,9 +119,6 @@
     </ClInclude>
     <ClInclude Include="Resources.h">
       <Filter>Sources\GameResouces</Filter>
-    </ClInclude>
-    <ClInclude Include="ConstructionBonus.h">
-      <Filter>Sources\GameObjects\BonusFactory</Filter>
     </ClInclude>
     <ClInclude Include="GameSettings.h">
       <Filter>Sources</Filter>

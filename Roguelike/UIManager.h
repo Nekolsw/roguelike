@@ -13,7 +13,6 @@ namespace Roguelike
 		struct Interface 
 		{
 			UIScore uiScore;
-			UITableRecord uiTableRecord;
 			UIMainMenu uiMainMenu;
 			UIEnterName uiEnterName;
 			UIPopUpEnterName uiPopUpEnterName;
@@ -23,9 +22,7 @@ namespace Roguelike
 		GameResources resources;
 		Interface interfaces;
 		void PopUpEnteredName(sf::Event& event);
-		void PopUpTableRecord(sf::Event& event);
 		void EnterNamePlayer(sf::Event& event);
-		void AddPlayerInTable(std::string namePlayerTable, int numberScore);
 		void ManagementMainMenu(sf::Window& window);
 	public:
 		GameSettings gameSettings;
@@ -35,7 +32,6 @@ namespace Roguelike
 			Game,
 			EnterName,
 			IsEnterName,
-			PopUpTableRecord,
 			MenuItem
 		};
 		InterfaceState interfaceState;
@@ -51,7 +47,7 @@ namespace Roguelike
 
 		void InitializationUIManager();
 		void UpdateScore();
-		void AddScore(GameSettings::TypeBrick typeBrick);
+		void AddScore();
 		int GetScore();
 		void ResetScore();
 		void IsGameWon(bool isWinning);
