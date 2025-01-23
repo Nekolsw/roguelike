@@ -6,7 +6,7 @@
 #include "BaseBrick.h"
 #include "ProtectedBrick.h"
 #include "Resources.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	class Ball : public SpriteObject
 	{

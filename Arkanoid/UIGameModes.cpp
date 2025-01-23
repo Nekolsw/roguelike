@@ -1,6 +1,6 @@
 #include "UIGameModes.h"
 #include "KeyBindings.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	void UIGameModes::InitializedMainMenu(sf::Font& font)
 	{
@@ -55,10 +55,10 @@ namespace Arkanoid
 				Playback(gameResouces.menuEnter, gameSettings);
 				switch (beginGameModeItem)
 				{
-				case Arkanoid::UIGameModes::isMoveObstacle:
+				case Roguelike::UIGameModes::isMoveObstacle:
 					gameSettings.gameMode.isMoveObstacle = !gameSettings.gameMode.isMoveObstacle;
 					break;
-				case Arkanoid::UIGameModes::isPortalEnable :
+				case Roguelike::UIGameModes::isPortalEnable :
 					gameSettings.gameMode.isPortalEnable = !gameSettings.gameMode.isPortalEnable;
 					break;
 				default:

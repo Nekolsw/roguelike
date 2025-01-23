@@ -4,7 +4,7 @@ namespace sf
 	class Text;
 }
 
-namespace Arkanoid
+namespace Roguelike
 {
 	struct UIPosition2D
 	{

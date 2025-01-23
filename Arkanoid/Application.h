@@ -3,7 +3,7 @@
 #include <SFML/Audio.hpp>
 #include "Constants.h"
 #include "Game.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	class Application
 	{

@@ -7,7 +7,7 @@
 
 int main()
 {
-	using namespace Arkanoid;
+	using namespace Roguelike;
 	Application::Instance();
 	return 0;
 }

@@ -1,5 +1,5 @@
 #include "ConstructionBricks.h"
-namespace Arkanoid 
+namespace Roguelike 
 {
 	std::shared_ptr <BaseBrick> WorkshopClassicBrick::Create()
 	{

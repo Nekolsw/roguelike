@@ -1,6 +1,6 @@
 #include "SpriteObject.h"
 #include "GameMath.h"
-namespace Arkanoid
+namespace Roguelike
 {
 
 	void SpriteObject::Initialization(sf::Vector2f newPosition, sf::Vector2f newScale, sf::Texture& texture, sf::Color color)

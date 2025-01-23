@@ -1,6 +1,6 @@
 #include "UITableRecord.h"
 #include "Constants.h"
-namespace Arkanoid
+namespace Roguelike
 {
 
     void UITableRecord::SortedRecordTable()

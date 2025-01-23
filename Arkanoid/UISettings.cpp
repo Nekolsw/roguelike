@@ -1,7 +1,7 @@
 #include "UISettings.h"
 #include "KeyBindings.h"
 
-namespace Arkanoid
+namespace Roguelike
 {
 	void UISettings::InitializedSettings(sf::Font& font)
 	{

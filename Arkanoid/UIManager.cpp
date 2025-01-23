@@ -1,6 +1,6 @@
 #include "UIManager.h"
 
-namespace Arkanoid 
+namespace Roguelike 
 {
 	void UIManager::InitializationUIManager()
 	{
@@ -142,19 +142,19 @@ namespace Arkanoid
 	{
 		switch (interfaceState)
 		{
-		case Arkanoid::UIManager::InterfaceState::MainMenu:
+		case Roguelike::UIManager::InterfaceState::MainMenu:
 			interfaces.uiMainMenu.DrawMainMenu(window, resources.fontText, interfaces.uiTableRecord);
 			break;
-		case Arkanoid::UIManager::InterfaceState::Game:
+		case Roguelike::UIManager::InterfaceState::Game:
 			interfaces.uiScore.DrawScore(window);
 			break;
-		case Arkanoid::UIManager::InterfaceState::IsEnterName:
+		case Roguelike::UIManager::InterfaceState::IsEnterName:
 			interfaces.uiPopUpEnterName.DrawPopUp(window);
 			break;
-		case Arkanoid::UIManager::InterfaceState::EnterName:
+		case Roguelike::UIManager::InterfaceState::EnterName:
 			interfaces.uiEnterName.DrawEnterText(window);
 			break;
-		case Arkanoid::UIManager::InterfaceState::PopUpTableRecord:
+		case Roguelike::UIManager::InterfaceState::PopUpTableRecord:
 			interfaces.uiTableRecord.DrawTableGameOver(window, resources, numberPlayerNameGameOverTable);
 			break;
 

@@ -1,7 +1,7 @@
 #include <cmath>
 #include "VectorMain.h"
 
-namespace Arkanoid 
+namespace Roguelike 
 {
 	VectorMain::VectorMain(float newX, float newY)
 	{

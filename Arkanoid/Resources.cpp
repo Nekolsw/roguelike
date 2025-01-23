@@ -1,5 +1,5 @@
 #include "Resources.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	void InitializingResources(GameResources& resources)
 	{

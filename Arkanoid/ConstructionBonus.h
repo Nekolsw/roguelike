@@ -4,7 +4,7 @@
 #include "GlassBrickBonus.h"
 #include "IncreasingPlatformBonus.h"
 
-namespace Arkanoid 
+namespace Roguelike 
 {
 	class WorkshopBonus
 	{

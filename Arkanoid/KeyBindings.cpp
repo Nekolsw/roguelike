@@ -1,6 +1,6 @@
 #include "KeyBindings.h"
 
-namespace Arkanoid 
+namespace Roguelike 
 {
 	KeyBindings::KeyBindings()
 	{

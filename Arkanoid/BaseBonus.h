@@ -1,7 +1,7 @@
 #pragma once
 #include "SpriteObject.h"
 #include "Resources.h"
-namespace Arkanoid 
+namespace Roguelike 
 {
 	class BaseBonus : public SpriteObject
 	{
