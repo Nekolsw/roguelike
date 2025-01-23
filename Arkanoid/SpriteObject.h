@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "VectorMain.h"
 #include "GameObject.h"
-namespace Arkanoid
+namespace Roguelike
 {
 
 	class SpriteObject : public GameObject

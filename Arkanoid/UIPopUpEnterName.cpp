@@ -1,6 +1,6 @@
 #include "UIPopUpEnterName.h"
 #include "KeyBindings.h"
-namespace Arkanoid 
+namespace Roguelike 
 {
 
 	bool UIPopUpEnterName::PopUpWillNameEntered(sf::Event event)

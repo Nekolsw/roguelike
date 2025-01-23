@@ -1,6 +1,6 @@
 #pragma once
 #include "UIConstructor.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	class UIPopUpEnterName
 	{

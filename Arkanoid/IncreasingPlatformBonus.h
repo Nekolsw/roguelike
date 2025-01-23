@@ -1,7 +1,7 @@
 #pragma once
 #include "BaseBonus.h"
 #include "GameMath.h"
-namespace Arkanoid 
+namespace Roguelike 
 {
 	class IncreasingPlatformBonus : public BaseBonus
 	{

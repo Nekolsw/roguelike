@@ -2,7 +2,7 @@
 #include "KeyBindings.h"
 #pragma warning(disable : 4996)
 
-namespace Arkanoid
+namespace Roguelike
 {
 	void UIMainMenu::InitializedMainMenu(sf::Font& font)
 	{
@@ -71,20 +71,20 @@ namespace Arkanoid
 		{
 			switch (beginMenuItem)
 			{
-			case Arkanoid::UIMainMenu::StartPLaying:
+			case Roguelike::UIMainMenu::StartPLaying:
 				isMenuItemSelected = false;
 				return true;
 				break;
-			case Arkanoid::UIMainMenu::TableScore:
+			case Roguelike::UIMainMenu::TableScore:
 
 				break;
-			case Arkanoid::UIMainMenu::GameModes:
+			case Roguelike::UIMainMenu::GameModes:
 				uiMenuItem.uiGameModes.ChoiceMenu(gameSettings, gameResources);
 				break;
-			case Arkanoid::UIMainMenu::Settings:
+			case Roguelike::UIMainMenu::Settings:
 				uiMenuItem.uiSettings.ChoiceSettings(gameSettings, gameResources);
 				break;
-			case Arkanoid::UIMainMenu::Exit:
+			case Roguelike::UIMainMenu::Exit:
 				window.close();
 				break;
 			default:
@@ -115,13 +115,13 @@ namespace Arkanoid
 		{
 			switch (beginMenuItem)
 			{
-			case Arkanoid::UIMainMenu::TableScore:
+			case Roguelike::UIMainMenu::TableScore:
 				uiTableRecord.DrawTableRecord(window, font, 5);
 				break;
-			case Arkanoid::UIMainMenu::GameModes:
+			case Roguelike::UIMainMenu::GameModes:
 				uiMenuItem.uiGameModes.Draw(window);
 				break;
-			case Arkanoid::UIMainMenu::Settings:
+			case Roguelike::UIMainMenu::Settings:
 				uiMenuItem.uiSettings.DrawSettings(window);
 				break;
 			default:

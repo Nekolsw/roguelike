@@ -2,7 +2,7 @@
 #include "GameMath.h"
 #include "Constants.h"
 #include "Ball.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	void Brick::Initialization(sf::Vector2f newPosition, sf::Vector2f sizeBrick, GameResources& resources, sf::Color color)
 	{

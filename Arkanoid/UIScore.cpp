@@ -1,6 +1,6 @@
 #include "UIScore.h"
 
-namespace Arkanoid
+namespace Roguelike
 {
 	void UIScore::InitializingScore(sf::Font& font)
 	{

@@ -3,7 +3,7 @@
 #include <string>
 #include "UIMath.h"
 #include "Resources.h"
-namespace Arkanoid
+namespace Roguelike
 {
 
 	void SetTextScreen(sf::Text& textScreen, std::string stringScreen, int textSize, sf::Color textColor,

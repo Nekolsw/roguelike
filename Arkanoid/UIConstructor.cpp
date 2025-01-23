@@ -1,5 +1,5 @@
 #include "UIConstructor.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	void SetTextScreen(sf::Text& textScreen, std::string stringScreen, int textSize, sf::Color textColor, sf::Font& font, UIPosition2D gameTextPosition, UIPosition2D textRevelationOrigin, bool isTextBold)
 	{

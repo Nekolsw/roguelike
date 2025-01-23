@@ -6,7 +6,7 @@
 #include "UITableRecord.h"
 #include "UIGameModes.h"
 #include "Resources.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	class UIMainMenu
 	{

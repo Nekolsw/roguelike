@@ -1,7 +1,7 @@
 #pragma once
 #include "UIConstructor.h"
 #include "GameSettings.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	class UISettings
 	{

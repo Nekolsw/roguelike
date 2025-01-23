@@ -6,7 +6,7 @@
 #include "Resources.h"
 #include "GameSettings.h"
 
-namespace Arkanoid 
+namespace Roguelike 
 {
 	class UIManager
 	{

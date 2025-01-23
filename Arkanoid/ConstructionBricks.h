@@ -5,7 +5,7 @@
 #include "Brick.h"
 #include "ProtectedBrick.h"
 #include <SFML/Graphics.hpp>
-namespace Arkanoid
+namespace Roguelike
 {
 	class WorkshopBrick
 	{

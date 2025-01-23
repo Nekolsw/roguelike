@@ -1,6 +1,6 @@
 #include "ConstructionBonus.h"
 #include "Constants.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	std::shared_ptr <BaseBonus> WorkshopFireBallBonus::Create()
 	{

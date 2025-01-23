@@ -4,7 +4,7 @@ namespace sf
 	class sprite;
 }
 
-namespace Arkanoid 
+namespace Roguelike 
 {
 
 	void SetSpriteSize(sf::Sprite& sprite, sf::Vector2f size);

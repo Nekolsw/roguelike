@@ -4,7 +4,7 @@
 #include "UIConstructor.h"
 #include "Resources.h"
 #include "GameSettings.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	class UIGameModes
 	{

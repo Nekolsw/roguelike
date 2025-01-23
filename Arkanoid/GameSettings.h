@@ -1,6 +1,6 @@
 #pragma once
 #include "Constants.h"
-namespace Arkanoid
+namespace Roguelike
 {
 	struct GameSettings
 	{
