@@ -3,7 +3,7 @@
 
 
 namespace Roguelike
-{
+{ /*
 	void Game::RunApplication(GameStruct& gameStruct)
 	{
 
@@ -43,7 +43,6 @@ namespace Roguelike
 		{
 			RestartGame(gameStruct);
 		}
-		if ()
 	}
 
 	void Game::UpdateEvent(GameStruct& gameStruct, sf::Event& event, sf::Window& window, float deltaTime)
@@ -57,5 +56,5 @@ namespace Roguelike
 		gameStruct.walls.Draw(window);
 		GetUIManager().DrawUI(window);
 	}
-		
+		*/
 }

@@ -58,14 +58,14 @@
     <ClCompile Include="SpriteObject.cpp">
       <Filter>Sources\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="VectorMain.cpp">
-      <Filter>Sources\GameMath</Filter>
-    </ClCompile>
     <ClCompile Include="GameMath.cpp">
       <Filter>Sources\GameMath</Filter>
     </ClCompile>
     <ClCompile Include="Resources.cpp">
       <Filter>Sources\GameResouces</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorMain.cpp">
+      <Filter>Sources\GameMath</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -108,9 +108,6 @@
     <ClInclude Include="SpriteObject.h">
       <Filter>Sources\GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="VectorMain.h">
-      <Filter>Sources\GameMath</Filter>
-    </ClInclude>
     <ClInclude Include="GameMath.h">
       <Filter>Sources\GameMath</Filter>
     </ClInclude>
@@ -122,6 +119,9 @@
     </ClInclude>
     <ClInclude Include="GameSettings.h">
       <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorMain.h">
+      <Filter>Sources\GameMath</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

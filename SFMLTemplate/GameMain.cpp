@@ -3,13 +3,25 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-
+#include "Engine.h"
+#include "windows.h"
+#include <iostream>
 const std::string RESOURCES_PATH = "Resources/";
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(330, 400), "SFML works!");
+	//if (AllocConsole()) 
+	//{
+	//	FILE* fp;
+	//	freopen_s(&fp, "CONOUT$", "w", stdout);
+	//	freopen_s(&fp, "CONOUT$", "w", stderr);
+	//}
 
+	Engine engine;
+	engine.Initialize();
+	engine.Run();
+
+	sf::RenderWindow window(sf::VideoMode(330, 400), "SFML works!");
 	sf::Texture logo;
 	if (!logo.loadFromFile(RESOURCES_PATH + "xyz-logo.png"))
 	{

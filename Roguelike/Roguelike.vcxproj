@@ -195,6 +195,11 @@
     <ClInclude Include="UISettings.h" />
     <ClInclude Include="VectorMain.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.vcxproj">
+      <Project>{d62e1e5c-109b-4e3f-a8b3-6477802e3c87}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
