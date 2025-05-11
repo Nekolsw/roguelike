@@ -25,6 +25,7 @@ namespace XYZEngine
 		void SetLocalPosition(float positionX, float positionY);
 
 		void RotateBy(float offset);
+		float RotateTo(const Vector2Df& mainPossition, const Vector2Df& targetPossition);
 		void SetWorldRotation(float angle);
 		void SetLocalRotation(float angle);
 

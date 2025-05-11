@@ -120,6 +120,9 @@ namespace XYZEngine
 			return result;
 		}
 
+		void AddChild(GameObject* child);
+		void RemoveChild(GameObject* child);
+
 		friend class GameWorld;
 		friend class TransformComponent;
 
@@ -129,7 +132,5 @@ namespace XYZEngine
 		std::vector<GameObject*> children = {};
 		std::vector<Component*> components = {};
 
-		void AddChild(GameObject* child);
-		void RemoveChild(GameObject* child);
 	};
 }

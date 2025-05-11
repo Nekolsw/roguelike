@@ -29,6 +29,7 @@ namespace XYZEngine
 	{
 		bounds = sprite->getGlobalBounds();
 	}
+
 	void SpriteColliderComponent::Render()
 	{
 		sf::RectangleShape rectangle(sf::Vector2f(bounds.width, bounds.height));

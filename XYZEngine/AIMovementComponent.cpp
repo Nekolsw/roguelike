@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "AIMovementComponent.h"
 
-
 XYZEngine::AIMovementComponent::AIMovementComponent(GameObject* gameObject)
 	: Component(gameObject)
 {
@@ -19,7 +18,6 @@ void XYZEngine::AIMovementComponent::Update(float deltaTime)
 		direction = direction.Normalize();
 
 		transformSelf->MoveBy(speed * deltaTime * Vector2Df{ direction.x, direction.y });
-
 		acceleration = transformSelf->GetWorldPosition() - previousPosition;
 		previousPosition = transformSelf->GetWorldPosition();
 
@@ -44,7 +42,7 @@ void XYZEngine::AIMovementComponent::SetTarget(GameObject* gameObject)
 
 void XYZEngine::AIMovementComponent::ClearTarget()
 {
-	//transformTarget = nullptr;
+	transformTarget = nullptr;
 }
 
 float XYZEngine::AIMovementComponent::GetSpeed() const

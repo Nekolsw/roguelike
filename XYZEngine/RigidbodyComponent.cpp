@@ -12,7 +12,6 @@ namespace XYZEngine
 	{
 		transform->MoveBy(linearVelocity);
 		transform->RotateBy(angleVelocity);
-
 		linearVelocity = (1.f - linearDamping * deltaTime) * linearVelocity;
 		angleVelocity = (1.f - angleDamping * deltaTime) * angleVelocity;
 

@@ -20,7 +20,6 @@ void XYZEngine::MovementComponent::Update(float deltaTime)
 	float yAxis = input->GetVerticalAxis();
 
 	transform->MoveBy(speed * deltaTime * Vector2Df{ xAxis, yAxis });
-
 	acceleration = transform->GetWorldPosition() - previousPosition;
 	previousPosition = transform->GetWorldPosition();
 }

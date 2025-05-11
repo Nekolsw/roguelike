@@ -9,6 +9,7 @@ namespace XYZEngine
 	{
 		verticalAxis = 0.f;
 		horizontalAxis = 0.f;
+		isSpaceBarPressed = false;
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
@@ -27,6 +28,11 @@ namespace XYZEngine
 		{
 			horizontalAxis -= 1.0f;
 		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		{
+			isSpaceBarPressed = true;
+		}
+
 	}
 	void InputComponent::Render()
 	{
@@ -37,8 +43,15 @@ namespace XYZEngine
 	{
 		return horizontalAxis;
 	}
+
+
 	float InputComponent::GetVerticalAxis() const
 	{
 		return verticalAxis;
+	}
+
+	bool InputComponent::GetSpaceBarPressed() const
+	{
+		return isSpaceBarPressed;
 	}
 }

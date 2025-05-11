@@ -1,5 +1,5 @@
 #pragma once
-
+#include <math.h>
 namespace XYZEngine
 {
 	template<typename T>

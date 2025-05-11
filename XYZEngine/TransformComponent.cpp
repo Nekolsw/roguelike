@@ -75,6 +75,15 @@ namespace XYZEngine
 		}
 		isUpdated = false;
 	}
+
+	float TransformComponent::RotateTo(const Vector2Df& mainPossition, const Vector2Df& targetPossition) {
+		float dx = targetPossition.x - mainPossition.x;
+		float dy = targetPossition.y - mainPossition.y;
+		float angle = std::atan2(dy, dx); // ”гол в радианах
+		SetWorldRotation(angle * 180.f / 3.141592);
+		return angle * 180.f / 3.141592;
+	}
+
 	void TransformComponent::SetWorldRotation(float angle)
 	{
 		if (parent == nullptr)

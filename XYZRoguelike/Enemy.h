@@ -15,9 +15,6 @@ namespace XYZRoguelike
 		XYZEngine::GameObject* GetGameObject();
 	private:
 		XYZEngine::GameObject* gameObject;
-		void HandleCollision() {
-			
-		}
 	};
 }
 

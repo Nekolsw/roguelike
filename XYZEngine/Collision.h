@@ -11,9 +11,10 @@ namespace XYZEngine
 		Collision(ColliderComponent* newFirst, ColliderComponent* newSecond, sf::FloatRect newCollisionRect) :
 			first(newFirst), second(newSecond), collisionRect(newCollisionRect) {
 		};
-	private:
+
 		ColliderComponent* first;
 		ColliderComponent* second;
+	private:
 		sf::FloatRect collisionRect;
 	};
 }
