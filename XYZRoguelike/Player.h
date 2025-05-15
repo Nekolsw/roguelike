@@ -13,7 +13,6 @@ namespace XYZRoguelike
 	{
 	public:
 		Player();
-		XYZEngine::GameObject* GetGameObject();
 	private:
 		XYZEngine::GameObject* gameObject;
 	};

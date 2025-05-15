@@ -168,6 +168,7 @@
     <ClCompile Include="BlockFactory.cpp" />
     <ClCompile Include="Bonus.cpp" />
     <ClCompile Include="CharacterStats.cpp" />
+    <ClCompile Include="ControllerInputComponent.cpp" />
     <ClCompile Include="DeveloperLevel.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="BlockFactory.h" />
     <ClInclude Include="Bonus.h" />
     <ClInclude Include="CharacterStats.h" />
+    <ClInclude Include="ControllerInputComponent.h" />
     <ClInclude Include="DeveloperLevel.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="GameObject.h" />

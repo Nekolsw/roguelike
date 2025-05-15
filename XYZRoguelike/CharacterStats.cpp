@@ -8,6 +8,7 @@ namespace XYZEngine
 		health = 100.f;
 		maxHealth = 100.f;
 		armor = 0.f;
+		transform = gameObject->GetComponent<TransformComponent>();
 	}
 
 	void CharacterStats::SetMaxHealth(float maxHealthSet)
@@ -32,6 +33,11 @@ namespace XYZEngine
 
 	void CharacterStats::DealDamage(float amountDamage)
 	{
+		if (amountDamage < 0.f)
+		{
+			amountDamage * -1.f;
+		}
+
 		if (health >= amountDamage - armor)
 		{
 			health -= amountDamage - armor;
@@ -40,6 +46,7 @@ namespace XYZEngine
 		{
 			health = 0.f;
 			stateLifeCharacter = false;
+			OnDeath();
 		}
 	}
 
@@ -55,10 +62,18 @@ namespace XYZEngine
 
 	void CharacterStats::Update(float deltaTime)
 	{
+
 	}
 
 	void CharacterStats::Render()
 	{
+	}
+
+	void CharacterStats::OnDeath()
+	{
+		transform->SetWorldPosition(0.f, 0.f);
+		health = maxHealth;
+		stateLifeCharacter = true;
 	}
 
 }

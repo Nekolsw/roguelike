@@ -17,10 +17,13 @@ namespace XYZEngine
 	void CameraComponent::Update(float deltaTime)
 	{
 		auto position = transform->GetWorldPosition();
-		auto rotation = transform->GetWorldRotation();
-
 		view->setCenter(Convert<sf::Vector2f, Vector2Df>(position));
-		view->setRotation(rotation);
+
+		if (isTurnTracking) 
+		{
+			auto rotation = transform->GetWorldRotation();
+			view->setRotation(rotation);
+		}
 
 		window->setView(*view);
 	}
@@ -49,4 +52,10 @@ namespace XYZEngine
 		}
 		view->zoom(newZoom);
 	}
+
+	void CameraComponent::SetTurnTracking(bool isTracking)
+	{
+		isTurnTracking = isTracking;
+	}
+
 }

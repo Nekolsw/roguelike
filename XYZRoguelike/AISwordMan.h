@@ -1,5 +1,6 @@
 #pragma once
 #include "AIMovementComponent.h"
+#include "AttackComponent.h"
 #include "Weapon.h"
 namespace XYZRoguelike
 {
@@ -12,7 +13,6 @@ namespace XYZRoguelike
 
 		void SetSpeed(float newSpeed);
 		void SetTarget(XYZEngine::GameObject* gameObject);
-		void AddWeapon(XYZEngine::Weapon* weapon);
 		void ClearTarget();
 		float GetSpeed() const;
 		float GetAccelerationSquared() const;
@@ -20,7 +20,7 @@ namespace XYZRoguelike
 	private:
 		XYZEngine::TransformComponent* transformSelf;
 		XYZEngine::TransformComponent* transformTarget = nullptr;
-		XYZEngine::Weapon* sword = nullptr;
+		AttackComponent* attackComponent = nullptr;
 		float speed = 20.f;
 		float viewingRadius = 300.f;
 		float meleeAttackRadius = 70.f;

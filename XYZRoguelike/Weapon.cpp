@@ -1,4 +1,5 @@
 #include "Weapon.h"
+#include "CharacterStats.h"
 #include "IDelayedAction.h"
 #include <ResourceSystem.h>
 #include <SpriteColliderComponent.h>
@@ -6,17 +7,30 @@ namespace XYZEngine
 {
 	Weapon::Weapon(GameObject* gameObject) : Component(gameObject)
 	{
+		ownerTransform = gameObject->GetComponent<TransformComponent>();
 		gameObject = GameWorld::Instance()->CreateGameObject("Sword");
 
+	
 		weaponRenderer = gameObject->AddComponent<SpriteRendererComponent>();
 		weaponRenderer->SetTexture(*ResourceSystem::Instance()->GetTextureShared("ball"));
 		weaponRenderer->SetPixelSize(0, 0);
-		auto body = gameObject->AddComponent<XYZEngine::RigidbodyComponent>();
+		auto body = gameObject->AddComponent<RigidbodyComponent>();
 		body->SetKinematic(true);
 		auto collider = gameObject->AddComponent<SpriteColliderComponent>();
 		transform = gameObject->GetComponent<TransformComponent>();
-		transform->SetWorldPosition({0.f, 0.f});
-		
+		transform->SetWorldPosition({ 0.f, 0.f });
+		float weaponDamage = 15.f;
+		float* tickDamage = &damageTime;
+		collider->SubscribeCollision([weaponDamage, tickDamage](XYZEngine::Collision x)
+			{
+				CharacterStats* characterStats = x.first->GetGameObject()->GetComponent<CharacterStats>();
+				if (characterStats != nullptr && *tickDamage <= 0.f)
+				{
+					characterStats->DealDamage(weaponDamage);
+					*tickDamage = 1.f;
+					std::cout << characterStats->GetHealth() << std::endl;
+				}
+			});
 	}
 	GameObject* Weapon::GetGameObject()
 	{
@@ -25,55 +39,41 @@ namespace XYZEngine
 
 	void Weapon::Update(float deltaTime)
 	{
-
-		delayAttack -= 1.f * deltaTime;
-		if (delayAttack <= 0.f)
+		if (damageTime > 0.f) 
 		{
-			StopAttack();
-			attackSpeed -= 1.f * deltaTime;
+			damageTime -= 1.f * deltaTime;
 		}
+		auto characterPosition = ownerTransform->GetWorldPosition();
+		auto characterRotation = ownerTransform->GetWorldRotation();
+		// Обновляем позицию меча
+		float dirX = cos(transform->GetWorldRotation() * 3.14159265f / 180.f); //Переводим в радианы 
+		float dirY = sin(transform->GetWorldRotation() * 3.14159265f / 180.f);
+
+		Vector2Df offset;
+		offset.x = characterPosition.x + dirX * placementDistance;
+		offset.y = characterPosition.y + dirY * placementDistance;
+
+		transform->SetWorldRotation(characterRotation);
+		transform->SetWorldPosition(offset);
 	}
 
 	void Weapon::Render()
 	{
 	}
 
-	void Weapon::Attack(const Vector2Df characterPosition, float placementDistance, float angelAttack)
+	void Weapon::SetActive(bool OnActive)
 	{
-		if (delayAttack <= 0.f && attackSpeed <= 0.f) 
+		if (OnActive)
 		{
-			delayAttack = 0.1f;
-			attackSpeed = 2.f;
 			weaponRenderer->SetPixelSize(35, 8);
-			transform->SetWorldRotation(angelAttack);
-
-			// Обновляем позицию меча
-			float dirX = cos(transform->GetWorldRotation() * 3.14159265f / 180.f); //Переводим в радианы 
-			float dirY = sin(transform->GetWorldRotation() * 3.14159265f / 180.f);
-
-			Vector2Df offset;
-			offset.x = characterPosition.x + dirX * placementDistance;
-			offset.y = characterPosition.y + dirY * placementDistance;
-
-			transform->SetWorldPosition(offset);
-
 		}
+		else 
+		{
+			weaponRenderer->SetPixelSize(0, 0);
+		}
+		
 		
 	}
 
-	void Weapon::StopAttack()
-	{
-		weaponRenderer->SetPixelSize(0, 0);
-	}
-
-	//void Weapon::SetWeaponType(WeaponType type)
-	//{
-	//	weaponType = type;
-	//}
-
-	//Weapon::WeaponType Weapon::GetWeaponType()
-	//{
-	//	return weaponType;
-	//}
 
 }

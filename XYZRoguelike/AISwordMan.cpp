@@ -4,6 +4,7 @@ namespace XYZRoguelike
 	AISwordMan::AISwordMan(XYZEngine::GameObject* gameObject) : XYZEngine::AIMovementComponent(gameObject)
 	{
 		transformSelf = gameObject->GetComponent<XYZEngine::TransformComponent>();
+		attackComponent = gameObject->GetComponent<AttackComponent>();
 	}
 	void AISwordMan::Update(float deltaTime)
 	{
@@ -25,8 +26,8 @@ namespace XYZRoguelike
 
 		else if (distanceFromTarget <= meleeAttackRadius && transformTarget != nullptr)
 		{
-			float angle = transformSelf->RotateTo(transformSelf->GetWorldPosition(), transformTarget->GetWorldPosition());
-			sword->Attack(previousPosition, offsetSword, angle);
+			transformSelf->RotateTo(transformSelf->GetWorldPosition(), transformTarget->GetWorldPosition());
+			attackComponent->Attack();
 				
 		}
 	}
@@ -41,10 +42,6 @@ namespace XYZRoguelike
 	void AISwordMan::SetTarget(XYZEngine::GameObject* gameObject)
 	{
 		transformTarget = gameObject->GetComponent<XYZEngine::TransformComponent>();
-	}
-	void AISwordMan::AddWeapon(XYZEngine::Weapon* weapon)
-	{
-		sword = weapon;
 	}
 	void AISwordMan::ClearTarget()
 	{

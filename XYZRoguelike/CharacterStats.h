@@ -1,4 +1,5 @@
 #pragma once
+#include "TransformComponent.h"
 #include "GameObject.h"
 #include "Component.h"
 namespace XYZEngine
@@ -19,7 +20,8 @@ namespace XYZEngine
 		virtual void Render() override;
 
 	private:
-
+		void OnDeath();
+		TransformComponent* transform;
 		float health, maxHealth, armor;
 		bool stateLifeCharacter = true;
 	};

@@ -16,9 +16,10 @@ namespace XYZEngine
 
 		void SetWindow(sf::RenderWindow* newWindow);
 		void ZoomBy(float newZoom);
-
+		void SetTurnTracking(bool isTracking);
 		void SetBaseResolution(int width, int height);
 	private:
+		bool isTurnTracking = true;
 		TransformComponent* transform;
 		sf::RenderWindow* window;
 		sf::View* view;

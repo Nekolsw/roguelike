@@ -19,6 +19,7 @@ namespace XYZEngine
 		InputComponent* input;
 		TransformComponent* transform;
 
+		float lastHorizontalAxis = 0.f, lastVerticalAxis = 0.f;
 		float speed = 0;
 		Vector2Df previousPosition = { 0, 0 };
 		Vector2Df acceleration = { 0, 0 };

@@ -13,11 +13,11 @@ namespace XYZRoguelike
 		
 		playerRenderer->SetTexture(*XYZEngine::ResourceSystem::Instance()->GetTextureShared("ball"));
 		playerRenderer->SetPixelSize(24, 24);
-		auto weapon = gameObject->AddComponent<XYZEngine::Weapon>();
 		auto transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
+		auto weapon = gameObject->AddComponent<XYZEngine::Weapon>();
+		auto attackSystem = gameObject->AddComponent<AttackComponent>();
 		auto movement = gameObject->AddComponent<AISwordMan>();
 		movement->SetSpeed(50.f);
-		movement->AddWeapon(weapon);
 		movement->SetTarget(XYZEngine::GameWorld::Instance()->GetGameObjectByName("Player"));
 
 		auto body = gameObject->AddComponent<XYZEngine::RigidbodyComponent>();
@@ -38,10 +38,9 @@ namespace XYZRoguelike
 		auto transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
 		transform->SetWorldPosition(position);
 		auto weapon = gameObject->AddComponent<XYZEngine::Weapon>();
-		//weapon->SetWeaponType(XYZEngine::Weapon::Sword);
+		auto attackSystem = gameObject->AddComponent<AttackComponent>();
 		auto movement = gameObject->AddComponent<AISwordMan>();
 		movement->SetSpeed(50.f);
-		movement->AddWeapon(weapon);
 		movement->SetTarget(XYZEngine::GameWorld::Instance()->GetGameObjectByName("Player"));
 
 		auto body = gameObject->AddComponent<XYZEngine::RigidbodyComponent>();
