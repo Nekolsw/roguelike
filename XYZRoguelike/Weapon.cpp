@@ -1,4 +1,5 @@
 #include "Weapon.h"
+#include "Logger.h"
 #include "CharacterStats.h"
 #include "IDelayedAction.h"
 #include <ResourceSystem.h>
@@ -9,7 +10,6 @@ namespace XYZEngine
 	{
 		ownerTransform = gameObject->GetComponent<TransformComponent>();
 		gameObject = GameWorld::Instance()->CreateGameObject("Sword");
-
 	
 		weaponRenderer = gameObject->AddComponent<SpriteRendererComponent>();
 		weaponRenderer->SetTexture(*ResourceSystem::Instance()->GetTextureShared("ball"));
@@ -20,17 +20,27 @@ namespace XYZEngine
 		transform = gameObject->GetComponent<TransformComponent>();
 		transform->SetWorldPosition({ 0.f, 0.f });
 		float weaponDamage = 15.f;
-		float* tickDamage = &damageTime;
-		collider->SubscribeCollision([weaponDamage, tickDamage](XYZEngine::Collision x)
+		collider->SubscribeCollision([weaponDamage, &tickDamage = std::move(linkDamageTime)](XYZEngine::Collision x)
+		{
+			CharacterStats* characterStats = x.first->GetGameObject()->GetComponent<CharacterStats>();
+			try 
 			{
-				CharacterStats* characterStats = x.first->GetGameObject()->GetComponent<CharacterStats>();
-				if (characterStats != nullptr && *tickDamage <= 0.f)
+				if (!characterStats) 
 				{
-					characterStats->DealDamage(weaponDamage);
-					*tickDamage = 1.f;
-					std::cout << characterStats->GetHealth() << std::endl;
+					throw std::invalid_argument("Component: CharacterStats not found\n");
 				}
-			});
+			}
+			catch (const std::invalid_argument& e)
+			{
+				LOG_WARN(e.what());
+			}
+			if (characterStats && tickDamage && *tickDamage <= 0.f)
+			{
+				characterStats->DealDamage(weaponDamage);
+				*tickDamage = 1.f;
+				std::cout << characterStats->GetHealth() << std::endl;
+			}
+		});
 	}
 	GameObject* Weapon::GetGameObject()
 	{
@@ -39,9 +49,9 @@ namespace XYZEngine
 
 	void Weapon::Update(float deltaTime)
 	{
-		if (damageTime > 0.f) 
+		if (*linkDamageTime > 0.f)
 		{
-			damageTime -= 1.f * deltaTime;
+			*linkDamageTime -= 1.f * deltaTime;
 		}
 		auto characterPosition = ownerTransform->GetWorldPosition();
 		auto characterRotation = ownerTransform->GetWorldRotation();

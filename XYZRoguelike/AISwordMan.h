@@ -2,6 +2,7 @@
 #include "AIMovementComponent.h"
 #include "AttackComponent.h"
 #include "Weapon.h"
+#include <cassert>
 namespace XYZRoguelike
 {
 	class AISwordMan : public XYZEngine::AIMovementComponent

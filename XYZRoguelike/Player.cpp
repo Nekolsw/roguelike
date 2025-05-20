@@ -37,6 +37,7 @@ namespace XYZRoguelike
 
 		auto collider = gameObject->AddComponent<XYZEngine::SpriteColliderComponent>();
 		auto playerStats = gameObject->AddComponent<XYZEngine::CharacterStats>();
+		playerStats->Setarmor(4.f);
 
 	}
 

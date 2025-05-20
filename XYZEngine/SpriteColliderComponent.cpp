@@ -1,4 +1,5 @@
 #include "pch.h"
+#include "Logger.h"
 #include "SpriteColliderComponent.h"
 
 namespace XYZEngine
@@ -8,7 +9,7 @@ namespace XYZEngine
 		auto spriteRenderer = gameObject->GetComponent<SpriteRendererComponent>();
 		if (spriteRenderer == nullptr)
 		{
-			std::cout << "SpriteRenderer required to SpriteCollider." << std::endl;
+			LOG_WARN("SpriteRenderer required to SpriteCollider.\n");
 			gameObject->RemoveComponent(this);
 			return;
 		}

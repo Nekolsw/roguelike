@@ -1,4 +1,5 @@
 #include "AISwordMan.h"
+#include "Logger.h"
 namespace XYZRoguelike
 {
 	AISwordMan::AISwordMan(XYZEngine::GameObject* gameObject) : XYZEngine::AIMovementComponent(gameObject)
@@ -28,7 +29,6 @@ namespace XYZRoguelike
 		{
 			transformSelf->RotateTo(transformSelf->GetWorldPosition(), transformTarget->GetWorldPosition());
 			attackComponent->Attack();
-				
 		}
 	}
 	void AISwordMan::Render()
@@ -41,11 +41,14 @@ namespace XYZRoguelike
 	}
 	void AISwordMan::SetTarget(XYZEngine::GameObject* gameObject)
 	{
+		assert(gameObject != nullptr && "A pointer to a gameObject for a target must not have a null value");
 		transformTarget = gameObject->GetComponent<XYZEngine::TransformComponent>();
+		LOG_INFO("Target AISwordMan: " + gameObject->GetName() + "\n");
 	}
 	void AISwordMan::ClearTarget()
 	{
 		transformTarget = nullptr;
+		LOG_INFO("Target AISwordMan clear \n");
 	}
 	float AISwordMan::GetSpeed() const
 	{

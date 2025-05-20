@@ -2,6 +2,7 @@
 #define NOMINMAX
 
 #include "SFML/Graphics.hpp"
+#include "Logger.h"
 
 namespace XYZEngine
 {

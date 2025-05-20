@@ -16,11 +16,10 @@ namespace XYZEngine
 		void Render() override;
 		void SetActive(bool OnActive);
 	private:
-		XYZEngine::InputComponent* input;
 		XYZEngine::SpriteRendererComponent* weaponRenderer;
 		XYZEngine::TransformComponent* transform;
 		XYZEngine::TransformComponent* ownerTransform;
 		float placementDistance = 40.f;
-		float damageTime = 1.f;
+		const std::unique_ptr<float> linkDamageTime = std::make_unique<float>(1.f);
 	};
 }

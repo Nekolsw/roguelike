@@ -20,6 +20,13 @@ namespace XYZEngine
 
 	void Engine::Run()
 	{
+		//Configuring the logger
+		auto logger = std::make_shared <Logger>();
+		logger->addSink(std::make_shared <ConsoleSink>());
+		logger->addSink(std::make_shared <FileSink>("log.txt"));
+		LoggerRegistry::getInstance().registerLogger("global", logger);
+		LoggerRegistry::getInstance().setDefaultLogger(logger);
+
 		sf::Clock gameClock;
 		sf::Event event;
 		

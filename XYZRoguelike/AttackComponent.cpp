@@ -1,10 +1,12 @@
 #include "AttackComponent.h"
 #include "Vector.h"
+#include <cassert>
 namespace XYZRoguelike
 {
 	AttackComponent::AttackComponent(XYZEngine::GameObject* gameObject) : Component(gameObject) 
 	{
 		weapon = gameObject->GetComponent<XYZEngine::Weapon>();
+		assert(weapon != nullptr && "Weapon object must not be null");
 	}
 
 	void AttackComponent::Update(float deltaTime)

@@ -1,4 +1,5 @@
 #include "CharacterStats.h"
+#include "Logger.h"
 
 namespace XYZEngine
 {
@@ -33,18 +34,20 @@ namespace XYZEngine
 
 	void CharacterStats::DealDamage(float amountDamage)
 	{
-		if (amountDamage < 0.f)
+		if (std::abs(amountDamage) <= armor) 
 		{
-			amountDamage * -1.f;
+			LOG_INFO("The armor absorbed all the damage\n");
+			return; 
 		}
-
-		if (health >= amountDamage - armor)
+		if (health >= std::abs(amountDamage) - armor)
 		{
-			health -= amountDamage - armor;
+			LOG_INFO(this->gameObject->GetName() + " received damage: " + std::to_string(std::abs(amountDamage) - armor) + "\n");
+			health -= std::abs(amountDamage) - armor;
 		}
-		else 
+		else
 		{
 			health = 0.f;
+			LOG_INFO("Dead");
 			stateLifeCharacter = false;
 			OnDeath();
 		}

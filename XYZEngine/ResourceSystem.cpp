@@ -1,13 +1,16 @@
 #include "pch.h"
+#include "Logger.h"
 #include "ResourceSystem.h"
 
 namespace XYZEngine
 {
+
 	ResourceSystem* ResourceSystem::Instance()
 	{
 		static ResourceSystem resourceSystem;
 		return &resourceSystem;
 	}
+
 
 	void ResourceSystem::LoadTexture(const std::string& name, std::string sourcePath, bool isSmooth)
 	{
@@ -17,11 +20,25 @@ namespace XYZEngine
 		}
 
 		sf::Texture* newTexture = new sf::Texture();
-		if (newTexture->loadFromFile(sourcePath))
+		try 
 		{
+			if (!newTexture->loadFromFile(sourcePath))
+			{
+				throw std::invalid_argument("File not found: " + sourcePath + "\n");
+			}
+		}
+		catch (const std::invalid_argument& e)
+		{
+			LOG_ERROR(e.what());
+			newTexture->loadFromFile("../XYZEngine/BaseResource/DefaultResource.png");
 			newTexture->setSmooth(isSmooth);
 			textures.emplace(name, newTexture);
 		}
+
+		newTexture->loadFromFile(sourcePath);
+		newTexture->setSmooth(isSmooth);
+		textures.emplace(name, newTexture);
+		
 	}
 	const sf::Texture* ResourceSystem::GetTextureShared(const std::string& name) const
 	{
@@ -48,8 +65,18 @@ namespace XYZEngine
 		}
 
 		sf::Texture textureMap;
-		if (textureMap.loadFromFile(sourcePath))
+
+		try 
 		{
+			if (!textureMap.loadFromFile(sourcePath))
+			{
+				throw std::invalid_argument("File not found: " + sourcePath + "\n");
+			};
+		}
+		catch (const std::invalid_argument& e)
+		{
+			LOG_ERROR(e.what());
+			textureMap.loadFromFile("../XYZEngine/BaseResource/DefaulthMapResource.png");
 			auto textureMapElements = new std::vector<sf::Texture*>();
 
 			auto textureSize = textureMap.getSize();
@@ -70,7 +97,7 @@ namespace XYZEngine
 					}
 
 					sf::Texture* newTextureMapElement = new sf::Texture();
-					if (newTextureMapElement->loadFromFile(sourcePath, sf::IntRect(x, y, elementPixelSize.x, elementPixelSize.y)))
+					if (newTextureMapElement->loadFromFile("../XYZEngine/BaseResource/DefaulthMapResource.png", sf::IntRect(x, y, elementPixelSize.x, elementPixelSize.y)))
 					{
 						newTextureMapElement->setSmooth(isSmooth);
 						textureMapElements->push_back(newTextureMapElement);
@@ -81,6 +108,38 @@ namespace XYZEngine
 
 			textureMaps.emplace(name, *textureMapElements);
 		}
+		textureMap.loadFromFile(sourcePath);
+		auto textureMapElements = new std::vector<sf::Texture*>();
+
+		auto textureSize = textureMap.getSize();
+		int loadedElements = 0;
+
+		for (int y = 0; y <= textureSize.y - elementPixelSize.y; y += elementPixelSize.y)
+		{
+			if (loadedElements == totalElements)
+			{
+				break;
+			}
+
+			for (int x = 0; x <= textureSize.x - elementPixelSize.x; x += elementPixelSize.x)
+			{
+				if (loadedElements == totalElements)
+				{
+					break;
+				}
+
+				sf::Texture* newTextureMapElement = new sf::Texture();
+				if (newTextureMapElement->loadFromFile(sourcePath, sf::IntRect(x, y, elementPixelSize.x, elementPixelSize.y)))
+				{
+					newTextureMapElement->setSmooth(isSmooth);
+					textureMapElements->push_back(newTextureMapElement);
+				}
+				loadedElements++;
+			}
+		}
+
+			textureMaps.emplace(name, *textureMapElements);
+		
 	}
 	const sf::Texture* ResourceSystem::GetTextureMapElementShared(const std::string& name, int elementIndex) const
 	{
@@ -156,10 +215,24 @@ namespace XYZEngine
 		}
 
 		sf::SoundBuffer* newSound = new sf::SoundBuffer();
-		if (newSound->loadFromFile(sourcePath))
+
+		try
 		{
+			if (newSound->loadFromFile(sourcePath))
+			{
+				throw std::invalid_argument("File not found: " + sourcePath + "\n");
+			}
+		}
+		catch (const std::invalid_argument& e)
+		{
+			LOG_ERROR(e.what());
+			newSound->loadFromFile("../XYZEngine/BaseResource/DefaultSound.wav");
 			sounds.emplace(name, newSound);
 		}
+
+		newSound->loadFromFile(sourcePath);
+		sounds.emplace(name, newSound);
+		
 	}
 
 	const sf::SoundBuffer* ResourceSystem::GetSound(const std::string& name) const
