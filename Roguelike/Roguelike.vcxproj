@@ -158,7 +158,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+<<<<<<< Updated upstream:Roguelike/Roguelike.vcxproj
     <ClCompile Include="Application.cpp" />
+=======
+    <ClCompile Include="AICreeper.cpp" />
+    <ClCompile Include="AISwordMan.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="AttackComponent.cpp" />
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="Block.cpp" />
+    <ClCompile Include="BlockFactory.cpp" />
+    <ClCompile Include="Bonus.cpp" />
+    <ClCompile Include="CharacterStats.cpp" />
+    <ClCompile Include="ControllerInputComponent.cpp" />
+    <ClCompile Include="DeveloperLevel.cpp" />
+    <ClCompile Include="SwordMan.cpp" />
+    <ClCompile Include="Floor.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GameStateData.cpp" />
+    <ClCompile Include="GameStateGameWin.cpp" />
+    <ClCompile Include="LevelLoader.cpp" />
+    <ClCompile Include="MazeGenerator.cpp" />
+    <ClCompile Include="Platform.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SoundPlayer.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+>>>>>>> Stashed changes:XYZRoguelike/XYZRoguelike.vcxproj
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="GameMath.cpp" />
@@ -176,8 +202,38 @@
     <ClCompile Include="VectorMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< Updated upstream:Roguelike/Roguelike.vcxproj
     <ClInclude Include="Application.h" />
     <ClInclude Include="Constants.h" />
+=======
+    <ClInclude Include="AICreeper.h" />
+    <ClInclude Include="AISwordMan.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="AttackComponent.h" />
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="Block.h" />
+    <ClInclude Include="BlockFactory.h" />
+    <ClInclude Include="Bonus.h" />
+    <ClInclude Include="CharacterStats.h" />
+    <ClInclude Include="ControllerInputComponent.h" />
+    <ClInclude Include="DeveloperLevel.h" />
+    <ClInclude Include="SwordMan.h" />
+    <ClInclude Include="Floor.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameStateData.h" />
+    <ClInclude Include="GameStateGameWin.h" />
+    <ClInclude Include="Collidable.h" />
+    <ClInclude Include="IDelayedAction.h" />
+    <ClInclude Include="IObserver.h" />
+    <ClInclude Include="LevelLoader.h" />
+    <ClInclude Include="MazeGenerator.h" />
+    <ClInclude Include="Platform.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="randomizer.h" />
+    <ClInclude Include="SoundPlayer.h" />
+    <ClInclude Include="Sprite.h" />
+>>>>>>> Stashed changes:XYZRoguelike/XYZRoguelike.vcxproj
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameMath.h" />
     <ClInclude Include="GameObject.h" />

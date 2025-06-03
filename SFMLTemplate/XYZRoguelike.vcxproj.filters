@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="AttackComponent.cpp" />
+    <ClCompile Include="Ball.cpp" />
+    <ClCompile Include="Block.cpp" />
+    <ClCompile Include="BlockFactory.cpp" />
+    <ClCompile Include="Bonus.cpp" />
+    <ClCompile Include="CharacterStats.cpp" />
+    <ClCompile Include="ControllerInputComponent.cpp" />
+    <ClCompile Include="DeveloperLevel.cpp" />
+    <ClCompile Include="SwordMan.cpp" />
+    <ClCompile Include="Floor.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GameStateData.cpp" />
+    <ClCompile Include="GameStateGameWin.cpp" />
+    <ClCompile Include="LevelLoader.cpp" />
+    <ClCompile Include="MazeGenerator.cpp" />
+    <ClCompile Include="Platform.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SoundPlayer.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="GameStatePauseMenu.cpp" />
+    <ClCompile Include="GameStateGameOver.cpp" />
+    <ClCompile Include="GameStateMainMenu.cpp" />
+    <ClCompile Include="GameStatePlaying.cpp" />
+    <ClCompile Include="GameStateRecords.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Text.cpp" />
+    <ClCompile Include="ThreeHitBlock.cpp" />
+    <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="AICreeper.cpp">
+      <Filter>AI_Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="AISwordMan.cpp">
+      <Filter>AI_Enemy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="AttackComponent.h" />
+    <ClInclude Include="Ball.h" />
+    <ClInclude Include="Block.h" />
+    <ClInclude Include="BlockFactory.h" />
+    <ClInclude Include="Bonus.h" />
+    <ClInclude Include="CharacterStats.h" />
+    <ClInclude Include="ControllerInputComponent.h" />
+    <ClInclude Include="DeveloperLevel.h" />
+    <ClInclude Include="SwordMan.h" />
+    <ClInclude Include="Floor.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameStateData.h" />
+    <ClInclude Include="GameStateGameWin.h" />
+    <ClInclude Include="Collidable.h" />
+    <ClInclude Include="IDelayedAction.h" />
+    <ClInclude Include="IObserver.h" />
+    <ClInclude Include="LevelLoader.h" />
+    <ClInclude Include="MazeGenerator.h" />
+    <ClInclude Include="Platform.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="randomizer.h" />
+    <ClInclude Include="SoundPlayer.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameSettings.h" />
+    <ClInclude Include="GameStatePauseMenu.h" />
+    <ClInclude Include="GameStateGameOver.h" />
+    <ClInclude Include="GameStateMainMenu.h" />
+    <ClInclude Include="GameStatePlaying.h" />
+    <ClInclude Include="GameStateRecords.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Text.h" />
+    <ClInclude Include="ThreeHitBlock.h" />
+    <ClInclude Include="Vector.h" />
+    <ClInclude Include="Wall.h" />
+    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="AICreeper.h">
+      <Filter>AI_Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="AISwordMan.h">
+      <Filter>AI_Enemy</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="AI_Enemy">
+      <UniqueIdentifier>{cce8d7f8-4253-4a27-9eb9-75301f60ab09}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
