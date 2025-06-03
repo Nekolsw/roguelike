@@ -29,7 +29,7 @@ void XYZEngine::MovementComponent::Update(float deltaTime)
 
 		lastVerticalAxis = 0.f;
 	}
-	float angle = 0.f;
+	angle = 0.f;
 	if (lastHorizontalAxis < 0.f)
 	{
 		angle = 180.f;
@@ -44,7 +44,10 @@ void XYZEngine::MovementComponent::Update(float deltaTime)
 	}
 
 	transform->MoveBy(speed * deltaTime * Vector2Df{ xAxis, yAxis });
-	transform->SetWorldRotation(angle);
+	if (directionalRotation)
+	{
+		transform->SetWorldRotation(angle);
+	}
 	acceleration = transform->GetWorldPosition() - previousPosition;
 	previousPosition = transform->GetWorldPosition();
 }
@@ -56,6 +59,11 @@ void XYZEngine::MovementComponent::Render()
 void XYZEngine::MovementComponent::SetSpeed(float newSpeed)
 {
 	speed = newSpeed;
+}
+
+void XYZEngine::MovementComponent::SetDirectionalRotation(bool newDirectionalRotation)
+{
+	directionalRotation = newDirectionalRotation;
 }
 
 float XYZEngine::MovementComponent::GetSpeed() const
