@@ -23,8 +23,10 @@ int main()
 	
 	XYZEngine::RenderSystem::Instance()->SetMainWindow(new sf::RenderWindow(sf::VideoMode(1280, 720), "Roguelike"));
 
-	XYZEngine::ResourceSystem::Instance()->LoadTexture("ball", "Resources/Textures/ballw.png");
-	XYZEngine::ResourceSystem::Instance()->LoadTextureMap("Walls", "Resources/MapsTexture/Wallsw.png", { 16, 16 }, 48, false);
+	XYZEngine::ResourceSystem::Instance()->LoadTextureMap("player", "Resources/MapsTexture/Player.png", { 48, 63 }, 4, false);
+	XYZEngine::ResourceSystem::Instance()->LoadTexture("ball", "Resources/Textures/ball.png");
+	XYZEngine::ResourceSystem::Instance()->LoadTextureMap("Walls", "Resources/MapsTexture/Walls.png", { 16, 16 }, 48, false);
+	XYZEngine::ResourceSystem::Instance()->LoadTextureMap("Floors", "Resources/MapsTexture/Floors.png", { 16, 16 }, 48, false);
 
 	ResourceSystem::Instance()->LoadSound("BackgroundMusic", "Resources/Music/BackgroundMusic.wav");
 
