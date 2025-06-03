@@ -65,7 +65,10 @@ namespace XYZEngine
 
 	void CharacterStats::Update(float deltaTime)
 	{
-
+		if(!stateLifeCharacter) 
+		{
+			this->gameObject->~GameObject();
+		}
 	}
 
 	void CharacterStats::Render()
@@ -74,9 +77,9 @@ namespace XYZEngine
 
 	void CharacterStats::OnDeath()
 	{
-		transform->SetWorldPosition(0.f, 0.f);
-		health = maxHealth;
-		stateLifeCharacter = true;
+		//transform->SetWorldPosition(0.f, 0.f);
+		//health = maxHealth;
+		//stateLifeCharacter = true;
 	}
 
 }
