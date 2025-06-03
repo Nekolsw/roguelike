@@ -12,7 +12,7 @@ namespace XYZRoguelike
 	class Player
 	{
 	public:
-		Player();
+		Player(const XYZEngine::Vector2Df& position);
 	private:
 		XYZEngine::GameObject* gameObject;
 	};
