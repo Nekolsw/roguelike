@@ -159,7 +159,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
 <<<<<<< Updated upstream:Roguelike/Roguelike.vcxproj
+<<<<<<< Updated upstream:Roguelike/Roguelike.vcxproj
     <ClCompile Include="Application.cpp" />
+=======
 =======
 >>>>>>> Stashed changes:XYZRoguelike/XYZRoguelike.vcxproj
     <ClCompile Include="AICreeper.cpp" />
@@ -204,8 +206,10 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< Updated upstream:Roguelike/Roguelike.vcxproj
+<<<<<<< Updated upstream:Roguelike/Roguelike.vcxproj
     <ClInclude Include="Application.h" />
     <ClInclude Include="Constants.h" />
+=======
 =======
 >>>>>>> Stashed changes:XYZRoguelike/XYZRoguelike.vcxproj
     <ClInclude Include="AICreeper.h" />
