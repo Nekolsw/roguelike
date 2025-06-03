@@ -161,6 +161,7 @@
 <<<<<<< Updated upstream:Roguelike/Roguelike.vcxproj
     <ClCompile Include="Application.cpp" />
 =======
+>>>>>>> Stashed changes:XYZRoguelike/XYZRoguelike.vcxproj
     <ClCompile Include="AICreeper.cpp" />
     <ClCompile Include="AISwordMan.cpp" />
     <ClCompile Include="Application.cpp" />
@@ -206,6 +207,7 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="Constants.h" />
 =======
+>>>>>>> Stashed changes:XYZRoguelike/XYZRoguelike.vcxproj
     <ClInclude Include="AICreeper.h" />
     <ClInclude Include="AISwordMan.h" />
     <ClInclude Include="Application.h" />
