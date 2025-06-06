@@ -10,25 +10,28 @@ namespace XYZRoguelike
 	void AISwordMan::Update(float deltaTime)
 	{
 		XYZEngine::Vector2Df positionAI = transformSelf->GetWorldPosition();
-		float distanceFromTarget = positionAI.CalculateDistance(transformTarget->GetWorldPosition());
-		bool isTargetInRadius = distanceFromTarget <= viewingRadius && distanceFromTarget >= meleeAttackRadius;
-		if (transformTarget != nullptr && isTargetInRadius)
+		if(objectTarget)
 		{
-			XYZEngine::Vector2Df direction = transformTarget->GetWorldPosition() - transformSelf->GetWorldPosition();
-			direction = direction.Normalize();
+			float distanceFromTarget = positionAI.CalculateDistance(objectTarget->GetComponent<XYZEngine::TransformComponent>()->GetWorldPosition());
+			bool isTargetInRadius = distanceFromTarget <= viewingRadius && distanceFromTarget >= meleeAttackRadius;
+			if (isTargetInRadius)
+			{
+				XYZEngine::Vector2Df direction = objectTarget->GetComponent<XYZEngine::TransformComponent>()->GetWorldPosition() - transformSelf->GetWorldPosition();
+				direction = direction.Normalize();
 
-			transformSelf->MoveBy(speed * deltaTime * XYZEngine::Vector2Df{ direction.x, direction.y });
-			transformSelf->RotateTo(transformSelf->GetWorldPosition(), transformTarget->GetWorldPosition());
+				transformSelf->MoveBy(speed * deltaTime * XYZEngine::Vector2Df{ direction.x, direction.y });
+				transformSelf->RotateTo(transformSelf->GetWorldPosition(), objectTarget->GetComponent<XYZEngine::TransformComponent>()->GetWorldPosition());
 
-			acceleration = transformSelf->GetWorldPosition() - previousPosition;
-			previousPosition = transformSelf->GetWorldPosition();
-			
-		}
+				acceleration = transformSelf->GetWorldPosition() - previousPosition;
+				previousPosition = transformSelf->GetWorldPosition();
 
-		else if (distanceFromTarget <= meleeAttackRadius && transformTarget != nullptr)
-		{
-			transformSelf->RotateTo(transformSelf->GetWorldPosition(), transformTarget->GetWorldPosition());
-			attackComponent->Attack();
+			}
+
+			else if (distanceFromTarget <= meleeAttackRadius && objectTarget != nullptr)
+			{
+				transformSelf->RotateTo(transformSelf->GetWorldPosition(), objectTarget->GetComponent<XYZEngine::TransformComponent>()->GetWorldPosition());
+				attackComponent->Attack();
+			}
 		}
 	}
 	void AISwordMan::Render()
@@ -42,12 +45,12 @@ namespace XYZRoguelike
 	void AISwordMan::SetTarget(XYZEngine::GameObject* gameObject)
 	{
 		assert(gameObject != nullptr && "A pointer to a gameObject for a target must not have a null value");
-		transformTarget = gameObject->GetComponent<XYZEngine::TransformComponent>();
+		objectTarget = gameObject;
 		LOG_INFO("Target AISwordMan: " + gameObject->GetName() + "\n");
 	}
 	void AISwordMan::ClearTarget()
 	{
-		transformTarget = nullptr;
+		objectTarget = nullptr;
 		LOG_INFO("Target AISwordMan clear \n");
 	}
 	float AISwordMan::GetSpeed() const

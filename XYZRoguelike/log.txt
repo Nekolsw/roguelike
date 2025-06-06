@@ -8580,3 +8580,101 @@
 [INFO] Enemy received damage: 55.000000
 
 [INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Player received damage: 51.000000
+
+[INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Player received damage: 51.000000
+
+[INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Player received damage: 51.000000
+
+[INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Player received damage: 51.000000
+
+[INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Player received damage: 51.000000
+
+[INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Player received damage: 51.000000
+
+[INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Player received damage: 51.000000
+
+[INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Player received damage: 51.000000
+
+[INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Enemy received damage: 55.000000
+
+[INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Enemy received damage: 55.000000
+
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Player received damage: 51.000000
+
+[INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Player received damage: 51.000000
+
+[INFO] Dead
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] Target AISwordMan: Player
+
+[INFO] Player received damage: 51.000000
+
+[INFO] Dead

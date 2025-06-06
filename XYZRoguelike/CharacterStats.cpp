@@ -1,5 +1,6 @@
 #include "CharacterStats.h"
 #include "Logger.h"
+#include "GameWorld.h"
 
 namespace XYZEngine
 {
@@ -67,7 +68,7 @@ namespace XYZEngine
 	{
 		if(!stateLifeCharacter) 
 		{
-			this->gameObject->~GameObject();
+			XYZEngine::GameWorld::Instance()->DestroyGameObject(this->gameObject);
 		}
 	}
 

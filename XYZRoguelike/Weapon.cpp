@@ -37,6 +37,7 @@ namespace XYZEngine
 		}
 		if (ownerTransform)
 		{
+			
 			auto characterPosition = ownerTransform->GetWorldPosition();
 			auto characterRotation = ownerTransform->GetWorldRotation();
 			// Обновляем позицию меча

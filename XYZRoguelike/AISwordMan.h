@@ -20,7 +20,7 @@ namespace XYZRoguelike
 
 	private:
 		XYZEngine::TransformComponent* transformSelf;
-		XYZEngine::TransformComponent* transformTarget = nullptr;
+		XYZEngine::GameObject* objectTarget;
 		AttackComponent* attackComponent = nullptr;
 		float speed = 20.f;
 		float viewingRadius = 300.f;
