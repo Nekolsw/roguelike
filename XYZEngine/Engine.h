@@ -1,23 +1,22 @@
 #pragma once
 #define NOMINMAX
 
-#include "SFML/Graphics.hpp"
 #include "Logger.h"
 
-namespace XYZEngine
-{
-	class Engine
-	{
-	public:
-		Engine(const Engine& app) = delete;
-		Engine& operator= (const Engine&) = delete;
+#include "SFML/Graphics.hpp"
 
-		static Engine* Instance();
+namespace XYZEngine {
+class Engine {
+   public:
+    Engine(const Engine& app) = delete;
+    Engine& operator=(const Engine&) = delete;
 
-		void Run();
+    static Engine* Instance();
 
-	private:
-		Engine();
-		~Engine() = default;
-	};
-}
+    void Run();
+
+   private:
+    Engine();
+    ~Engine() = default;
+};
+}  // namespace XYZEngine
