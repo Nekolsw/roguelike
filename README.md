@@ -4,22 +4,25 @@
 предстоит перемещаться по сгенерированным лабиринтам и сражаться с различными противниками.
 
 ## Roguelike
-- Генерация процедурных уровней
+- Генерация процедурных уровней (MazeGenerator)
+- Враги и ИИ (AIMovementComponent)
+- Характеристики персонажа (CharacterStatsComponent)
 - Перманентная смерть
-- Враги и ИИ
-- Характеристики персонажа
 
 ## Engine
 2D движок, реализующий:
 - Обработку ввода (InputComponent)
+- Систему игровых объектов (GameObject) 
 - Систему сущностей (Component)
 - Отрисовку спрайтов (RenderSystem)
-- Физику (коллизии и движение)
+- Отслеживание коллизии (Collision)
+- Физику (PhysicsSystem)
+- Воспроизведение звуков (SoundComponent)
 
 ## Установка и запуск
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/ваш-username/2d-roguelike.git
+   git clone https://github.com/Nekolsw/roguelike
 
 2. Откройте Game.sln в Visual Studio
 
