@@ -1,2 +1,38 @@
-Roguelike - is a simple 2d roguelike.
-The player explores a randomly generated labyrinth, kills monsters, and pick up loot.  
+# 2D Roguelike с собственным движком на C++
+
+Курсовой игровой проект в жанре Roguelike с собственным движком на C++ с использованием SFML. в игре
+предстоит перемещаться по сгенерированным лабиринтам и сражаться с различными противниками.
+
+## Roguelike
+- Генерация процедурных уровней
+- Перманентная смерть
+- Враги и ИИ
+- Характеристики персонажа
+
+## Engine
+2D движок, реализующий:
+- Обработку ввода (InputComponent)
+- Систему сущностей (Component)
+- Отрисовку спрайтов (RenderSystem)
+- Физику (коллизии и движение)
+
+## Установка и запуск
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/ваш-username/2d-roguelike.git
+
+2. Откройте Game.sln в Visual Studio
+
+3. Соберите и запустите проект (F5)
+
+## Используемые технологии
+
+- C++17
+
+- SFML 2.5.1
+
+- Visual Studio 2022
+
+## Лицензия
+
+- MIT.
