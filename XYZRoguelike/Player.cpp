@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "GameSettings.h"
 
 #include "AttackComponent.h"
 #include "CharacterStatsComponent.h"
@@ -8,21 +9,19 @@
 
 #include <MovementComponent.h>
 #include <ResourceSystem.h>
-#include <SpriteColliderComponent.h>
 #include <SpriteDirectionComponent.h>
+#include <SpriteColliderComponent.h>
 #include <SpriteMovementAnimationComponent.h>
 
 namespace XYZRoguelike {
 Player::Player(const XYZEngine::Vector2Df& position) {
-    gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject("Player");
-
-    auto playerRenderer =
+    gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject(GameSettings::Instance()->PLAYER_NAME);
+   auto playerRenderer =
         gameObject->AddComponent<XYZEngine::SpriteRendererComponent>();
     playerRenderer->SetTexture(
         *XYZEngine::ResourceSystem::Instance()->GetTextureMapElementShared(
             "player", 0));
     playerRenderer->SetPixelSize(32, 32);
-
     auto playerCamera = gameObject->AddComponent<XYZEngine::CameraComponent>();
     playerCamera->SetWindow(
         &XYZEngine::RenderSystem::Instance()->GetMainWindow());
@@ -49,13 +48,13 @@ Player::Player(const XYZEngine::Vector2Df& position) {
 
     auto collider =
         gameObject->AddComponent<XYZEngine::SpriteColliderComponent>();
-
-    auto animator =
-        gameObject->AddComponent<XYZEngine::SpriteMovementAnimationComponent>();
+    auto animator = gameObject->AddComponent<XYZEngine::SpriteMovementAnimationComponent>();
     animator->Initialize("player", 6.f);
-
     auto playerStats = gameObject->AddComponent<CharacterStatsComponent>();
     playerStats->SetArmor(4.f);
 }
+
+XYZEngine::GameObject* Player::GetGameObject() { return gameObject; }
+
 
 }  // namespace XYZRoguelike
