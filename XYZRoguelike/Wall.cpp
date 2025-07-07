@@ -5,7 +5,7 @@
 
 Wall::Wall(const XYZEngine::Vector2Df position, int indexTexture) {
     gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject("Wall");
-    auto transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
+    transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
     transform->SetWorldPosition(position);
 
     auto renderer =

@@ -5,21 +5,20 @@
 namespace XYZRoguelike {
 Explosion::Explosion(XYZEngine::GameObject* gameObject) : Weapon(gameObject) {
     ownerObject = gameObject;
-    gameObject =
+    weaponObject =
         XYZEngine::GameWorld::Instance()->CreateGameObject("Explosion");
 
     explosionTransform =
-        gameObject->GetComponent<XYZEngine::TransformComponent>();
+        weaponObject->GetComponent<XYZEngine::TransformComponent>();
     explosionTransform->SetWorldPosition({0.f, 0.f});
 
     objectRenderer =
-        gameObject->AddComponent<XYZEngine::SpriteRendererComponent>();
+        weaponObject->AddComponent<XYZEngine::SpriteRendererComponent>();
     objectRenderer->SetTexture(
         *XYZEngine::ResourceSystem::Instance()->GetTextureShared("Explosion"));
     objectRenderer->SetPixelSize(0, 0);
 }
-Explosion::~Explosion() { objectRenderer->SetPixelSize(0, 0); }
-XYZEngine::GameObject* Explosion::GetGameObject() { return gameObject; }
+Explosion::~Explosion() {}
 void Explosion::Update(float deltaTime) {
     if (tickDamage > 0.f) {
         tickDamage -= 1.f * deltaTime;

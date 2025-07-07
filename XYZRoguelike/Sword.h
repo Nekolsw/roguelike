@@ -13,7 +13,6 @@ class Sword : public Weapon {
    public:
     Sword(XYZEngine::GameObject* gameObject);
     ~Sword();
-    XYZEngine::GameObject* GetGameObject() override;
     void Update(float deltaTime) override;
     void Render() override;
     void SetActive(bool OnActive) override;

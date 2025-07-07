@@ -17,6 +17,17 @@ class GameWorld {
     GameObject* CreateGameObject(std::string name);
     GameObject* GetGameObjectByName(std::string name);
     int GetNumberGameObjectsByName(std::string name);
+    template<typename Component> 
+    std::vector<GameObject*> GetGameObjectsByComponent() {
+
+        std::vector<GameObject*> result;
+        for (const auto& gameObject : gameObjects) {
+            if (gameObject->GetComponent<Component>() != nullptr) {
+                result.push_back(gameObject);
+            }
+        }
+        return result;
+    }
     void DestroyGameObject(GameObject* gameObject);
     void Clear();
 

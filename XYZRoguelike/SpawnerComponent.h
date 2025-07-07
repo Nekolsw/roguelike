@@ -35,7 +35,9 @@ template<typename T> class SpawnerComponent : public XYZEngine::Component {
         switch (isEndless) {
             case 0:
                 if (time >= timeSpawn && numberSimultaneouslyExistingObject <
-                                             maxSimultaneouslyExistingObject) {
+                        maxSimultaneouslyExistingObject &&
+                    XYZEngine::GameWorld::Instance()
+                            ->GetNumberGameObjectsByName(name) < 1) {
                     auto NPC = std::make_shared<T>(
                         transform->GetWorldPosition(), name);
                     ++numberSimultaneouslyExistingObject;
@@ -47,7 +49,9 @@ template<typename T> class SpawnerComponent : public XYZEngine::Component {
                     XYZEngine::GameWorld::Instance()
                         ->GetNumberGameObjectsByName(name);
                 if (time >= timeSpawn && numberSimultaneouslyExistingObject <
-                                             maxSimultaneouslyExistingObject) {
+                        maxSimultaneouslyExistingObject &&
+                    XYZEngine::GameWorld::Instance()
+                            ->GetNumberGameObjectsByName(name) < 1) {
                     auto NPC = std::make_shared<T>(
                         transform->GetWorldPosition(), name);
                     time = 0.f;

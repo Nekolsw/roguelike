@@ -1,6 +1,7 @@
 #pragma once
 
 #include "AISwordMan.h"
+#include "GameSettings.h"
 #include "CharacterStatsComponent.h"
 #include "GameObject.h"
 #include "GameWorld.h"
@@ -27,7 +28,7 @@ template<typename AI, typename Weapon> class Enemy {
         auto attackSystem = gameObject->AddComponent<AttackComponent>();
         auto movement = gameObject->AddComponent<AI>();
         movement->SetTarget(
-            XYZEngine::GameWorld::Instance()->GetGameObjectByName("Player"));
+            XYZEngine::GameWorld::Instance()->GetGameObjectByName(GameSettings::Instance()->PLAYER_NAME));
         auto body = gameObject->AddComponent<XYZEngine::RigidbodyComponent>();
         auto collider =
             gameObject->AddComponent<XYZEngine::SpriteColliderComponent>();
@@ -49,7 +50,8 @@ template<typename AI, typename Weapon> class Enemy {
         auto attackSystem = gameObject->AddComponent<AttackComponent>();
         auto movement = gameObject->AddComponent<AI>();
         movement->SetTarget(
-            XYZEngine::GameWorld::Instance()->GetGameObjectByName("Player"));
+            XYZEngine::GameWorld::Instance()->GetGameObjectByName(
+                GameSettings::Instance()->PLAYER_NAME));
         auto body = gameObject->AddComponent<XYZEngine::RigidbodyComponent>();
         auto collider =
             gameObject->AddComponent<XYZEngine::SpriteColliderComponent>();

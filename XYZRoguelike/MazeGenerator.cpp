@@ -8,8 +8,13 @@
 namespace XYZRoguelike {
 // Constructor: Initializes the maze generator with the given dimensions and
 // level reference.
-MazeGenerator::MazeGenerator(int width, int height, DeveloperLevel* level)
-    : width(width), height(height), level(level) {
+MazeGenerator::MazeGenerator(int width, int height, DeveloperLevel* level,
+                             float offsetX, float offsetY)
+    : width(width),
+      height(height),
+      level(level),
+      offsetX(offsetX),
+      offsetY(offsetY) {
     // Resize the grid to match the maze dimensions and initialize all cells as
     // unvisited (false).
     grid.resize(height, std::vector<bool>(width, false));
@@ -21,8 +26,8 @@ void MazeGenerator::Generate() {
     std::srand(std::time(nullptr));
 
     // Start from a random cell in the grid.
-    int startX = std::rand() % width;
-    int startY = std::rand() % height;
+    int startX = (width / 4);
+    int startY = (height / 4);
 
     // Use a stack to keep track of visited cells during DFS.
     std::stack<std::pair<int, int>> stack;
@@ -69,10 +74,10 @@ std::vector<std::pair<int, int>> MazeGenerator::GetAvailableDirections(int x,
     // Define possible directions: up, down, left, right (2 cells away to leave
     // space for walls).
     std::vector<std::pair<int, int>> directions = {
-        {0, -2},  // Up
-        {0, 2},   // Down
-        {-2, 0},  // Left
-        {2, 0}    // Right
+        {0, -3},  // Up
+        {0, 3},   // Down
+        {-3, 0},  // Left
+        {3, 0}    // Right
     };
 
     std::vector<std::pair<int, int>> available;
@@ -99,15 +104,17 @@ void MazeGenerator::RemoveWall(int x1, int y1, int x2, int y2) {
     int wallY = (y1 + y2) / 2;
 
     // Add floors to the current cell and the neighboring cell.
-    level->floors.push_back(
+    /*level->floors.push_back(
         std::make_unique<Floor>(XYZEngine::Vector2Df{x1 * 64.f, y1 * 64.f}, 0));
     level->floors.push_back(
-        std::make_unique<Floor>(XYZEngine::Vector2Df{x2 * 64.f, y2 * 64.f}, 0));
+        std::make_unique<Floor>(XYZEngine::Vector2Df{x2 * 64.f, y2 * 64.f}, 0));*/
 
     // Add a wall at the midpoint if the cells are not directly adjacent.
     if (wallX != x1 || wallY != y1) {
         level->walls.push_back(std::make_unique<Wall>(
-            XYZEngine::Vector2Df{wallX * 64.f, wallY * 64.f}, 14));
+            XYZEngine::Vector2Df{wallX * 64.f + offsetX * 64.f,
+                                 wallY * 64.f + offsetY * 64.f},
+                                   14));
     }
 }
 }  // namespace XYZRoguelike

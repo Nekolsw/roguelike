@@ -2,23 +2,12 @@
 #include <string>
 
 namespace XYZRoguelike {
-class GameWorld {
-   private:
-    GameWorld() = default;
-
+class GameSettings {
    public:
-    static GameWorld& Instance() {
-        static GameWorld gameWorld;
-        return gameWorld;
-    }
-
-    // Resources path
-    const std::string RESOURCES_PATH = "Resources/";
-    const std::string TEXTURES_PATH = RESOURCES_PATH + "Textures/";
-    const std::string FONTS_PATH = RESOURCES_PATH + "Fonts/";
-    const std::string SOUNDS_PATH = RESOURCES_PATH + "Sounds/";
-    const std::string LEVELS_CONFIG_PATH = RESOURCES_PATH + "levels.config";
-
+    static GameSettings* Instance() {
+        static GameSettings settings;
+        return &settings;
+    };
     // Game settings constants
     const unsigned int SCREEN_WIDTH = 800;
     const unsigned int SCREEN_HEIGHT = 600;
@@ -27,7 +16,10 @@ class GameWorld {
     const char* PLAYER_NAME = "Player";
 
     const std::string GAME_NAME = "Roguelike";
+   private:
+    GameSettings() {}
+    ~GameSettings() {}
+    GameSettings(GameSettings const&) = delete;
+    GameSettings& operator=(GameSettings const&) = delete;
 };
 }  // namespace XYZRoguelike
-
-#define SETTINGS GameWorld::Instance()

@@ -51,6 +51,7 @@ GameObject* GameWorld::GetGameObjectByName(std::string name) {
     }
     return nullptr;
 }
+
 int GameWorld::GetNumberGameObjectsByName(std::string name) {
     int searchGameObject = 0;
     for (int i = 0; i < gameObjects.size(); i++) {
@@ -75,6 +76,7 @@ void GameWorld::Clear() {
         }
     }
 
+    markedToDestroyGameObjects.clear();
     fixedCounter = 0.f;
 }
 

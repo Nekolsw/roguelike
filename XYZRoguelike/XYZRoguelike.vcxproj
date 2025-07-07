@@ -169,9 +169,9 @@
     <ClCompile Include="Explosion.cpp" />
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="InitializeNPCSpawnerComponent.cpp" />
+    <ClCompile Include="LevelExit.cpp" />
+    <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="MazeGenerator.cpp" />
-    <ClCompile Include="NPCSpawner.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SoundPlayer.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -196,6 +196,8 @@
     <ClInclude Include="IDelayedAction.h" />
     <ClInclude Include="InitializeNPCSpawnerComponent.h" />
     <ClInclude Include="IObserver.h" />
+    <ClInclude Include="LevelExit.h" />
+    <ClInclude Include="LevelManager.h" />
     <ClInclude Include="MazeGenerator.h" />
     <ClInclude Include="NPCSpawner.h" />
     <ClInclude Include="Player.h" />

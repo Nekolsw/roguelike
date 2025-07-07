@@ -61,7 +61,11 @@ void ColliderComponent::UnsubscribeTriggerExit(
 
 void ColliderComponent::OnCollision(Collision collision) {
     for (int i = 0; i < onCollisionActions.size(); i++) {
-        onCollisionActions[i](collision);
+        if (collision.first->gameObject != nullptr &&
+            collision.second->gameObject != nullptr) 
+        {
+            onCollisionActions[i](collision);
+        }
     }
 }
 void ColliderComponent::OnTriggerEnter(Trigger trigger) {

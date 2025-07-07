@@ -2,6 +2,7 @@
 
 #include "GameWorld.h"
 #include "Logger.h"
+#include "Weapon.h"
 
 namespace XYZRoguelike {
 
@@ -44,6 +45,11 @@ void CharacterStatsComponent::RestoreHealth(float amountHealth) {
 
 void CharacterStatsComponent::Update(float deltaTime) {
     if (!stateLifeCharacter) {
+        if (this->gameObject->GetComponent<Weapon>())
+        {
+            XYZEngine::GameWorld::Instance()->DestroyGameObject(
+                this->gameObject->GetComponent<Weapon>()->GetWeaponObject());
+        }
         XYZEngine::GameWorld::Instance()->DestroyGameObject(this->gameObject);
     }
 }

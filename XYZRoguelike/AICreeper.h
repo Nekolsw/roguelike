@@ -12,11 +12,12 @@ class AICreeper : public XYZEngine::AIMovementComponent {
 
    private:
     AttackComponent* attackComponent = nullptr;
-    float meleeAttackRadius = 35.f;
+    float meleeAttackRadius = 40.f;
     float preAttackDelay = 1.5f;
     float gapBetweenMoving = 1.f;
     float timeMoving = 1.f;
-    float delayAttack = 1.f;
+    float delayAttack = 0.2f;
+    float timeExplosion = 0.15f;
     bool isExplosionStarted = false;
 
     const float GAP_BETWEEN_MOVING = 1.5f;

@@ -12,7 +12,6 @@ class Explosion : public Weapon {
    public:
     Explosion(XYZEngine::GameObject* gameObject);
     ~Explosion();
-    XYZEngine::GameObject* GetGameObject() override;
     void Update(float deltaTime) override;
     void Render() override;
     void SetActive(bool OnActive) override;

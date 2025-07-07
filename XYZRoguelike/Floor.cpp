@@ -3,7 +3,7 @@
 XYZRoguelike::Floor::Floor(const XYZEngine::Vector2Df position,
                            int textureMapIndex) {
     gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject("Floor");
-    auto transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
+    transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
     transform->SetWorldPosition(position);
 
     auto renderer =
