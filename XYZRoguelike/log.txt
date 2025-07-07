@@ -22338,3 +22338,90 @@
 
 [INFO] Target AISwordMan: Player
 
+[ERROR] File not found: Resources/Music/BackgroundMusic.wav
+
+[INFO] GetTextureShared: 1
+
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] GetTextureShared: 1
+
+[INFO] Target AISwordMan: Player
+
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] GetTextureShared: 1
+
+[INFO] Target AISwordMan: Player
+
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] GetTextureShared: 1
+
+[INFO] Target AISwordMan: Player
+
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] GetTextureShared: 1
+
+[INFO] Target AISwordMan: Player
+
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] GetTextureShared: 1
+
+[INFO] Target AISwordMan: Player
+
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] GetTextureShared: 1
+
+[INFO] Target AISwordMan: Player
+
+[INFO] GetTextureShared: 1
+
+[INFO] GetTextureShared: 1
+
+[INFO] GetTextureShared: 1
+
+[INFO] Target AISwordMan: Player
+
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
+[INFO] GetTextureShared: 1
+
+[INFO] SPAWN LEVEL
