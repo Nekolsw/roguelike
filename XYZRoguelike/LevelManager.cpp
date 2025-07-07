@@ -24,7 +24,7 @@ namespace XYZRoguelike {
         level->Start();
         std::srand(std::time(nullptr));
 
-              if (currentLevel % 3 != 0 && std::rand() % 100 < 70) {  
+              if (currentLevel % 3 != 0) {  
                  level->AddEnemy<AICreeper, Explosion>();
                   if (std::rand() % 100 < 30) 
                   {
@@ -34,8 +34,9 @@ namespace XYZRoguelike {
 
               } 
               else {
+
                  // add boss;
-              }
+              } 
 
     }
 
