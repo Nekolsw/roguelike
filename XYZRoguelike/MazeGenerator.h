@@ -6,11 +6,13 @@
 namespace XYZRoguelike {
 class MazeGenerator {
    public:
-    MazeGenerator(int width, int height, DeveloperLevel* level);
+    MazeGenerator(int width, int height, DeveloperLevel* level, float offsetX,
+                  float offsetY);
     void Generate();
 
    private:
     int width, height;
+    float offsetX, offsetY;
     DeveloperLevel* level;
     std::vector<std::vector<bool>> grid;
 
