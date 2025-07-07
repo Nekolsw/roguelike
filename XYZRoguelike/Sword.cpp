@@ -7,27 +7,20 @@
 namespace XYZRoguelike {
 Sword::Sword(XYZEngine::GameObject* gameObject) : Weapon(gameObject) {
     ownerTransform = gameObject->GetComponent<XYZEngine::TransformComponent>();
-    gameObject = XYZEngine::GameWorld::Instance()->CreateGameObject("Sword");
+    weaponObject = XYZEngine::GameWorld::Instance()->CreateGameObject("Sword");
 
     swordRenderer =
-        gameObject->AddComponent<XYZEngine::SpriteRendererComponent>();
+        weaponObject->AddComponent<XYZEngine::SpriteRendererComponent>();
     swordRenderer->SetTexture(
         *XYZEngine::ResourceSystem::Instance()->GetTextureShared("ball"));
     swordRenderer->SetPixelSize(0, 0);
-    body = gameObject->AddComponent<XYZEngine::RigidbodyComponent>();
+    body = weaponObject->AddComponent<XYZEngine::RigidbodyComponent>();
     body->SetKinematic(true);
-    collider = gameObject->AddComponent<XYZEngine::SpriteColliderComponent>();
-    transform = gameObject->GetComponent<XYZEngine::TransformComponent>();
+    transform = weaponObject->GetComponent<XYZEngine::TransformComponent>();
     transform->SetWorldPosition({0.f, 0.f});
-    collider->SubscribeCollision(
-        std::bind(&Sword::DamageCollision, this, std::placeholders::_1));
 }
 Sword::~Sword() {
-    collider->UnsubscribeCollision(
-        std::bind(&Sword::DamageCollision, this, std::placeholders::_1));
-    swordRenderer->SetPixelSize(0, 0);
 }
-XYZEngine::GameObject* Sword::GetGameObject() { return gameObject; }
 
 void Sword::Update(float deltaTime) {
     if (tickDamage > 0.f) {
@@ -54,8 +47,17 @@ void Sword::Render() {}
 
 void Sword::SetActive(bool OnActive) {
     if (OnActive) {
+        collider =
+            weaponObject->AddComponent<XYZEngine::SpriteColliderComponent>();
+        collider->SubscribeCollision(
+            std::bind(&Sword::DamageCollision, this, std::placeholders::_1));
         swordRenderer->SetPixelSize(35, 8);
-    } else {
+    } else if (collider != nullptr) {
+        collider->UnsubscribeCollision(
+            std::bind(&Sword::DamageCollision, this, std::placeholders::_1));
+
+        weaponObject->RemoveComponent(collider);
+        collider = nullptr;
         swordRenderer->SetPixelSize(0, 0);
     }
 }
