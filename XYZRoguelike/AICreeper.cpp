@@ -50,8 +50,14 @@ void AICreeper::Update(float deltaTime) {
             auto CreeperStats =
                 this->gameObject->GetComponent<CharacterStatsComponent>();
             attackComponent->Attack();
-            gameObject->GetComponent<CharacterStatsComponent>()->OnDeath();
-            return;
+            transformSelf->SetWorldScale(
+                0.f, 0.f);  // Removing the visual representation of the object
+            if (timeExplosion <= 0) {
+                gameObject->GetComponent<CharacterStatsComponent>()->OnDeath();
+                return;
+            } else {
+                timeExplosion -= 1.f * deltaTime;
+            }
         }
         return;
     }
