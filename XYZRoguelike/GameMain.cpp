@@ -1,7 +1,7 @@
 ﻿// ©2023, XYZ School. All rights reserved.
 // Authored by Aleksandr Rybalka (polterageist@gmail.com)
 
-#include "DeveloperLevel.h"
+#include "LevelManager.h"
 #include "Engine.h"
 #include "Logger.h"
 #include "Matrix2D.h"
@@ -37,8 +37,7 @@ int main() {
     ResourceSystem::Instance()->LoadSound(
         "BackgroundMusic", "Resources/Music/BackgroundMusic.wav");
 
-    auto developerLevel = std::make_shared<DeveloperLevel>();
-    developerLevel->Start();
+    LevelManager::Instance()->LoadRandomLevels();
 
     XYZEngine::Engine::Instance()->Run();
 
