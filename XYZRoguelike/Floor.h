@@ -10,6 +10,7 @@ namespace XYZRoguelike {
 class Floor {
    public:
     Floor(const XYZEngine::Vector2Df position, int textureMapIndex);
+    XYZEngine::TransformComponent* transform;
 
    private:
     XYZEngine::GameObject* gameObject;
