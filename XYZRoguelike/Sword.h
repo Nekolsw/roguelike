@@ -2,7 +2,6 @@
 #include "Component.h"
 #include "GameObject.h"
 #include "GameWorld.h"
-#include "InputComponent.h"
 #include "RenderSystem.h"
 #include "SpriteRendererComponent.h"
 #include "Weapon.h"
