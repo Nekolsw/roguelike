@@ -3,6 +3,7 @@
 
 #include "LevelExit.h"
 #include "LevelManager.h"
+#include "InventoryComponent.h"
 #include <GameWorld.h>
 #include <SpriteColliderComponent.h>
 #include <RigidbodyComponent.h>
@@ -27,12 +28,17 @@ LevelExit::LevelExit(const XYZEngine::Vector2Df position) {
 }
 
 void LevelExit::Transition(XYZEngine::Collision collision) {
-    /* if (collision.first->GetGameObject()->GetComponent<InventoryComponent>()
-     != nullptr && collision.first->GetGameObject()
-             ->GetComponent<InventoryComponent>()->Key != 0)
-     {
+    if (collision.first->GetGameObject()->GetComponent<InventoryComponent>() !=
+            nullptr &&
         collision.first->GetGameObject()
-             ->GetComponent<InventoryComponent>()->Key -= 1;*/
+                ->GetComponent<InventoryComponent>()
+                ->GetKey() != 0) 
+    {
+        collision.first->GetGameObject()
+            ->GetComponent<InventoryComponent>()
+            ->UseKey();
+        isDoorClosed = false;
+    }
 
     // XYZEngine::GameWorld::Instance()->DestroyGameObject(this->gameObject);
     if (!isDoorClosed) {
