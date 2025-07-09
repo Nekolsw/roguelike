@@ -73,7 +73,7 @@ void Sword::DamageCollision(XYZEngine::Collision collision) {
     } catch (const std::invalid_argument& e) {
         LOG_WARN(e.what());
     }
-    if (characterStats && (tickDamage <= 0.f && tickDamage <= 0.f)) {
+    if (characterStats && (tickDamage <= 0.f)) {
         characterStats->DealDamage(swordDamage);
         tickDamage = 1.f;
         std::cout << characterStats->GetHealth() << std::endl;
