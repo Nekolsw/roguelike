@@ -6,6 +6,7 @@
 #include "GameSettings.h"
 #include "GameWorld.h"
 #include "RenderSystem.h"
+#include "ItemDropComponent.h"
 #include "Weapon.h"
 
 #include <ResourceSystem.h>
@@ -28,10 +29,12 @@ template<typename AIBoss> class Boss {
         auto body = gameObject->AddComponent<XYZEngine::RigidbodyComponent>();
         auto collider =
             gameObject->AddComponent<XYZEngine::SpriteColliderComponent>();
+
+        auto drop = gameObject->AddComponent<ItemDropComponent>();
+
         auto enemyStats = gameObject->AddComponent<CharacterStatsComponent>();
         enemyStats->SetHealth(160.f);
     }
-
     XYZEngine::GameObject* GetGameObject() { return gameObject; }
 
    private:
