@@ -20,6 +20,7 @@
 - Воспроизведение звуков (SoundComponent)
 
 ## Установка и запуск
+Вариент 1:
 1. Клонируйте репозиторий:
    ```bash
    git clone https://github.com/Nekolsw/roguelike
@@ -27,6 +28,12 @@
 2. Откройте Game.sln в Visual Studio
 
 3. Соберите и запустите проект (F5)
+
+Вариант 2:
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/Nekolsw/roguelike\release
+2. Запустите файл XYZRoguelike.exe в roguelike\XYZRoguelike\x64\Debug\XYZRoguelike.exe
 
 ## Используемые технологии
 
